@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA63E1BC16D41568003287C6 /* DemoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA63E1B716D41568003287C6 /* DemoScene.cpp */; };
-		AA63E1BD16D41568003287C6 /* ExampleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA63E1B916D41568003287C6 /* ExampleObject.cpp */; };
-		AA63E1BE16D41568003287C6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA63E1BB16D41568003287C6 /* main.cpp */; };
 		AA63E1CF16D415BF003287C6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E1CE16D415BF003287C6 /* OpenGL.framework */; };
 		AA63E1D316D415CB003287C6 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E1D216D415CB003287C6 /* GLUT.framework */; };
 		AA63E22E16D421B5003287C6 /* libCGF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E22D16D421B5003287C6 /* libCGF.a */; };
@@ -19,6 +16,9 @@
 		AA63E23F16D422F1003287C6 /* pyramid.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23A16D422CA003287C6 /* pyramid.jpg */; };
 		AA63E24016D422F1003287C6 /* texshader.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23B16D422CA003287C6 /* texshader.frag */; };
 		AA63E24116D422F1003287C6 /* texshader.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23C16D422CA003287C6 /* texshader.vert */; };
+		EB18BC4C16D58F780036DDF0 /* ExampleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB18BC4716D58F780036DDF0 /* ExampleObject.cpp */; };
+		EB18BC4D16D58F780036DDF0 /* TPscene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB18BC4816D58F780036DDF0 /* TPscene.cpp */; };
+		EB18BC4E16D58F780036DDF0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB18BC4B16D58F780036DDF0 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,11 +38,6 @@
 
 /* Begin PBXFileReference section */
 		AA63E1AB16D41531003287C6 /* CGFExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CGFExample; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA63E1B716D41568003287C6 /* DemoScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DemoScene.cpp; path = src/DemoScene.cpp; sourceTree = SOURCE_ROOT; };
-		AA63E1B816D41568003287C6 /* DemoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoScene.h; path = src/DemoScene.h; sourceTree = SOURCE_ROOT; };
-		AA63E1B916D41568003287C6 /* ExampleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExampleObject.cpp; path = src/ExampleObject.cpp; sourceTree = SOURCE_ROOT; };
-		AA63E1BA16D41568003287C6 /* ExampleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleObject.h; path = src/ExampleObject.h; sourceTree = SOURCE_ROOT; };
-		AA63E1BB16D41568003287C6 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		AA63E1C116D415A6003287C6 /* CGFappearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGFappearance.h; path = ../CGFlib/include/CGFappearance.h; sourceTree = "<group>"; };
 		AA63E1C216D415A6003287C6 /* CGFapplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGFapplication.h; path = ../CGFlib/include/CGFapplication.h; sourceTree = "<group>"; };
 		AA63E1C316D415A6003287C6 /* CGFaxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGFaxis.h; path = ../CGFlib/include/CGFaxis.h; sourceTree = "<group>"; };
@@ -66,6 +61,11 @@
 		AA63E23A16D422CA003287C6 /* pyramid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pyramid.jpg; sourceTree = "<group>"; };
 		AA63E23B16D422CA003287C6 /* texshader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texshader.frag; sourceTree = "<group>"; };
 		AA63E23C16D422CA003287C6 /* texshader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texshader.vert; sourceTree = "<group>"; };
+		EB18BC4716D58F780036DDF0 /* ExampleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExampleObject.cpp; path = src/ExampleObject.cpp; sourceTree = SOURCE_ROOT; };
+		EB18BC4816D58F780036DDF0 /* TPscene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TPscene.cpp; path = src/TPscene.cpp; sourceTree = SOURCE_ROOT; };
+		EB18BC4916D58F780036DDF0 /* ExampleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleObject.h; path = src/ExampleObject.h; sourceTree = SOURCE_ROOT; };
+		EB18BC4A16D58F780036DDF0 /* TPscene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPscene.h; path = src/TPscene.h; sourceTree = SOURCE_ROOT; };
+		EB18BC4B16D58F780036DDF0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +107,11 @@
 		AA63E1AD16D41531003287C6 /* CGFExample */ = {
 			isa = PBXGroup;
 			children = (
-				AA63E1B716D41568003287C6 /* DemoScene.cpp */,
-				AA63E1B816D41568003287C6 /* DemoScene.h */,
-				AA63E1B916D41568003287C6 /* ExampleObject.cpp */,
-				AA63E1BA16D41568003287C6 /* ExampleObject.h */,
-				AA63E1BB16D41568003287C6 /* main.cpp */,
+				EB18BC4716D58F780036DDF0 /* ExampleObject.cpp */,
+				EB18BC4816D58F780036DDF0 /* TPscene.cpp */,
+				EB18BC4916D58F780036DDF0 /* ExampleObject.h */,
+				EB18BC4A16D58F780036DDF0 /* TPscene.h */,
+				EB18BC4B16D58F780036DDF0 /* main.cpp */,
 			);
 			path = CGFExample;
 			sourceTree = "<group>";
@@ -211,9 +211,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA63E1BC16D41568003287C6 /* DemoScene.cpp in Sources */,
-				AA63E1BD16D41568003287C6 /* ExampleObject.cpp in Sources */,
-				AA63E1BE16D41568003287C6 /* main.cpp in Sources */,
+				EB18BC4C16D58F780036DDF0 /* ExampleObject.cpp in Sources */,
+				EB18BC4D16D58F780036DDF0 /* TPscene.cpp in Sources */,
+				EB18BC4E16D58F780036DDF0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

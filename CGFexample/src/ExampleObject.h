@@ -8,4 +8,17 @@ class ExampleObject: public CGFobject {
 		void draw();
 };
 
+class MyUnitCube : public CGFobject {
+    public:
+        void draw();
+};
+
+class MyTable : public CGFobject {
+public:
+    void draw();
+private:
+    MyUnitCube myCube;
+};
+
+
 #endif
