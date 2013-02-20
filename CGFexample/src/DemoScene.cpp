@@ -38,7 +38,7 @@ void DemoScene::update(unsigned long t)
 	shader->bind();
 	shader->update(t/400.0);
 	shader->unbind();
-	
+	// aula2
 }
 	
 void DemoScene::display() 
