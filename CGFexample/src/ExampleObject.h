@@ -13,11 +13,17 @@ class MyUnitCube : public CGFobject {
         void draw();
 };
 
+class MyFloor : public CGFobject {
+    public:
+        void draw();
+};
+
 class MyTable : public CGFobject {
 public:
     void draw();
 private:
     MyUnitCube myCube;
+    MyFloor myFloor;
 };
 
 

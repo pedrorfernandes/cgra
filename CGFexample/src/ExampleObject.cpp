@@ -60,6 +60,15 @@ void MyUnitCube::draw()
     glPopMatrix();
 }
 
+void MyFloor::draw(){
+    glPushMatrix();
+    glTranslated(0, -1.75, 0);
+    glScaled(8, 0.1, 6);
+    glRotated(-90, 1, 0, 0);
+    glRectd(-0.5,-0.5,0.5,0.5);
+    glPopMatrix();
+}
+
 void MyTable::draw()
 {
     
@@ -100,6 +109,10 @@ void MyTable::draw()
     glScaled(5, 0.3, 3);
     myCube.draw();
     glPopMatrix();
+    
+    // and finally, the floor
+    
+    myFloor.draw();
     
     
 }

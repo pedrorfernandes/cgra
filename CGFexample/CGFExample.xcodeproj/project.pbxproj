@@ -108,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				EB18BC4716D58F780036DDF0 /* ExampleObject.cpp */,
-				EB18BC4816D58F780036DDF0 /* TPscene.cpp */,
 				EB18BC4916D58F780036DDF0 /* ExampleObject.h */,
+				EB18BC4816D58F780036DDF0 /* TPscene.cpp */,
 				EB18BC4A16D58F780036DDF0 /* TPscene.h */,
 				EB18BC4B16D58F780036DDF0 /* main.cpp */,
 			);
