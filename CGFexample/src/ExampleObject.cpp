@@ -62,7 +62,6 @@ void MyUnitCube::draw()
 
 void MyFloor::draw(){
     glPushMatrix();
-    glTranslated(0, -1.75, 0);
     glScaled(8, 0.1, 6);
     glRotated(-90, 1, 0, 0);
     glRectd(-0.5,-0.5,0.5,0.5);
@@ -71,48 +70,52 @@ void MyFloor::draw(){
 
 void MyTable::draw()
 {
-    
-    
-    // first leg
+    // align the table with the origin
     glPushMatrix();
-    glTranslated(2.25, 0, 1.25);
-    glScaled(0.3, 3.5, 0.3);
-    myCube.draw();
+    glTranslated(4, 1.75, 3);
+    
+        // first leg
+        glPushMatrix();
+        glTranslated(2.25, 0, 1.25);
+        glScaled(0.3, 3.5, 0.3);
+        myCube.draw();
+        glPopMatrix();
+        
+        // second leg
+        glPushMatrix();
+        glTranslated(2.25, 0, -1.25);
+        glScaled(0.3, 3.5, 0.3);
+        myCube.draw();
+        glPopMatrix();
+        
+        // third leg
+        glPushMatrix();
+        glTranslated(-2.25, 0, 1.25);
+        glScaled(0.3, 3.5, 0.3);
+        myCube.draw();
+        glPopMatrix();
+        
+        // fourth leg
+        glPushMatrix();
+        glTranslated(-2.25, 0, -1.25);
+        glScaled(0.3, 3.5, 0.3);
+        myCube.draw();
+        glPopMatrix();
+        
+        // top of the table
+        glPushMatrix();
+        glTranslated(0, 1.75, 0);
+        glScaled(5, 0.3, 3);
+        myCube.draw();
+        glPopMatrix();
+        
+        // the floor
+        glPushMatrix();
+        glTranslated(0, -1.75, 0);
+        myFloor.draw();
+        glPopMatrix();
+    
     glPopMatrix();
-    
-    // second leg
-    glPushMatrix();
-    glTranslated(2.25, 0, -1.25);
-    glScaled(0.3, 3.5, 0.3);
-    myCube.draw();
-    glPopMatrix();
-    
-    // third leg
-    glPushMatrix();
-    glTranslated(-2.25, 0, 1.25);
-    glScaled(0.3, 3.5, 0.3);
-    myCube.draw();
-    glPopMatrix();
-    
-    // fourth leg
-    glPushMatrix();
-    glTranslated(-2.25, 0, -1.25);
-    glScaled(0.3, 3.5, 0.3);
-    myCube.draw();
-    glPopMatrix();
-    
-    
-    // now the top of the table
-    
-    glPushMatrix();
-    glTranslated(0, 1.75, 0);
-    glScaled(5, 0.3, 3);
-    myCube.draw();
-    glPopMatrix();
-    
-    // and finally, the floor
-    
-    myFloor.draw();
     
     
 }
