@@ -125,7 +125,13 @@ void TPscene::display()
     glEnd();
      */
     
+    glPushMatrix();
+    glTranslated(4, 1.75, 3);
     myTable.draw();
+    glTranslated(0, -1.75, 0);
+    myFloor.draw();
+    glPopMatrix();
+
     
 	// ---- END Primitive drawing section
 

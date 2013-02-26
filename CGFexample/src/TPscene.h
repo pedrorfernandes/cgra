@@ -12,6 +12,7 @@ public:
     ExampleObject myObject;
     //MyUnitCube myUnitCube;
     MyTable myTable;
+    MyFloor myFloor;
 };
 
 #endif

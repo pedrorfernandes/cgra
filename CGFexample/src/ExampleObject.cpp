@@ -63,58 +63,46 @@ void MyUnitCube::draw()
 void MyFloor::draw(){
     glPushMatrix();
     glScaled(8, 0.1, 6);
-    glRotated(-90, 1, 0, 0);
-    glRectd(-0.5,-0.5,0.5,0.5);
+    myCube.draw();
     glPopMatrix();
 }
 
 void MyTable::draw()
 {
-    // align the table with the origin
+    
+    // first leg
     glPushMatrix();
-    glTranslated(4, 1.75, 3);
+    glTranslated(2.25, 0, 1.25);
+    glScaled(0.3, 3.5, 0.3);
+    myCube.draw();
+    glPopMatrix();
     
-        // first leg
-        glPushMatrix();
-        glTranslated(2.25, 0, 1.25);
-        glScaled(0.3, 3.5, 0.3);
-        myCube.draw();
-        glPopMatrix();
-        
-        // second leg
-        glPushMatrix();
-        glTranslated(2.25, 0, -1.25);
-        glScaled(0.3, 3.5, 0.3);
-        myCube.draw();
-        glPopMatrix();
-        
-        // third leg
-        glPushMatrix();
-        glTranslated(-2.25, 0, 1.25);
-        glScaled(0.3, 3.5, 0.3);
-        myCube.draw();
-        glPopMatrix();
-        
-        // fourth leg
-        glPushMatrix();
-        glTranslated(-2.25, 0, -1.25);
-        glScaled(0.3, 3.5, 0.3);
-        myCube.draw();
-        glPopMatrix();
-        
-        // top of the table
-        glPushMatrix();
-        glTranslated(0, 1.75, 0);
-        glScaled(5, 0.3, 3);
-        myCube.draw();
-        glPopMatrix();
-        
-        // the floor
-        glPushMatrix();
-        glTranslated(0, -1.75, 0);
-        myFloor.draw();
-        glPopMatrix();
+    // second leg
+    glPushMatrix();
+    glTranslated(2.25, 0, -1.25);
+    glScaled(0.3, 3.5, 0.3);
+    myCube.draw();
+    glPopMatrix();
     
+    // third leg
+    glPushMatrix();
+    glTranslated(-2.25, 0, 1.25);
+    glScaled(0.3, 3.5, 0.3);
+    myCube.draw();
+    glPopMatrix();
+    
+    // fourth leg
+    glPushMatrix();
+    glTranslated(-2.25, 0, -1.25);
+    glScaled(0.3, 3.5, 0.3);
+    myCube.draw();
+    glPopMatrix();
+    
+    // top of the table
+    glPushMatrix();
+    glTranslated(0, 1.75, 0);
+    glScaled(5, 0.3, 3);
+    myCube.draw();
     glPopMatrix();
     
     

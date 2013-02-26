@@ -15,15 +15,14 @@ class MyUnitCube : public CGFobject {
 
 class MyFloor : public CGFobject {
     public:
+        MyUnitCube myCube;
         void draw();
 };
 
 class MyTable : public CGFobject {
 public:
     void draw();
-private:
     MyUnitCube myCube;
-    MyFloor myFloor;
 };
 
 
