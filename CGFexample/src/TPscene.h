@@ -13,6 +13,7 @@ public:
     //MyUnitCube myUnitCube;
     MyTable myTable;
     MyFloor myFloor;
+    MyChair myChair;
 };
 
 #endif

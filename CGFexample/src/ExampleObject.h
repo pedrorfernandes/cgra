@@ -25,5 +25,11 @@ public:
     MyUnitCube myCube;
 };
 
+class MyChair : public CGFobject {
+public:
+    void draw();
+    MyUnitCube myCube;
+};
+
 
 #endif

@@ -69,7 +69,6 @@ void MyFloor::draw(){
 
 void MyTable::draw()
 {
-    
     // first leg
     glPushMatrix();
     glTranslated(2.25, 0, 1.25);
@@ -105,5 +104,56 @@ void MyTable::draw()
     myCube.draw();
     glPopMatrix();
     
+}
+
+#define CHAIR_LEG_Y 2
+#define CHAIR_LEG_X 0.3
+#define CHAIR_LEG_Z 0.3
+
+#define CHAIR_LEG_POS_X 1
+#define CHAIR_LEG_POS_Z 1
+
+
+void MyChair::draw(){
+    // first leg
+    glPushMatrix();
+    glTranslated(CHAIR_LEG_POS_X, 0, CHAIR_LEG_POS_Z);
+    glScaled(CHAIR_LEG_X, CHAIR_LEG_Y, CHAIR_LEG_Z);
+    myCube.draw();
+    glPopMatrix();
+    // second leg
+    glPushMatrix();
+    glTranslated(CHAIR_LEG_POS_X, 0, -CHAIR_LEG_POS_Z);
+    glScaled(CHAIR_LEG_X, CHAIR_LEG_Y, CHAIR_LEG_Z);
+    myCube.draw();
+    glPopMatrix();
+    // third leg
+    glPushMatrix();
+    glTranslated(-CHAIR_LEG_POS_X, 0, CHAIR_LEG_POS_Z);
+    glScaled(CHAIR_LEG_X, CHAIR_LEG_Y, CHAIR_LEG_Z);
+    myCube.draw();
+    glPopMatrix();
+    // fourth leg
+    glPushMatrix();
+    glTranslated(-CHAIR_LEG_POS_X, 0, -CHAIR_LEG_POS_Z);
+    glScaled(CHAIR_LEG_X, CHAIR_LEG_Y, CHAIR_LEG_Z);
+    myCube.draw();
+    glPopMatrix();
+    
+    // chair top
+    glPushMatrix();
+    glTranslated(0, CHAIR_LEG_Y/2+0.3/2, 0);
+    glScaled(CHAIR_LEG_POS_X*2+CHAIR_LEG_X, 0.3, CHAIR_LEG_POS_Z*2+CHAIR_LEG_Z);
+    myCube.draw();
+    glPopMatrix();
+    
+    // chair back
+    glPushMatrix();
+    glTranslated(0, CHAIR_LEG_Y + 0.3/2 + 0.3 , CHAIR_LEG_POS_Z);
+    glScaled(CHAIR_LEG_POS_X*2+CHAIR_LEG_X, CHAIR_LEG_POS_Z*2+CHAIR_LEG_Z, 0.3);
+    
+    myCube.draw();
+    glPopMatrix();
+     
     
 }
