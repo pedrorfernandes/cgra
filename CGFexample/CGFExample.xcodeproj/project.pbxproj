@@ -16,9 +16,12 @@
 		AA63E23F16D422F1003287C6 /* pyramid.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23A16D422CA003287C6 /* pyramid.jpg */; };
 		AA63E24016D422F1003287C6 /* texshader.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23B16D422CA003287C6 /* texshader.frag */; };
 		AA63E24116D422F1003287C6 /* texshader.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23C16D422CA003287C6 /* texshader.vert */; };
-		EB18BC4C16D58F780036DDF0 /* ExampleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB18BC4716D58F780036DDF0 /* ExampleObject.cpp */; };
-		EB18BC4D16D58F780036DDF0 /* TPscene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB18BC4816D58F780036DDF0 /* TPscene.cpp */; };
-		EB18BC4E16D58F780036DDF0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB18BC4B16D58F780036DDF0 /* main.cpp */; };
+		EB5318AC16E367F100C05759 /* ExampleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A116E367F100C05759 /* ExampleObject.cpp */; };
+		EB5318AD16E367F100C05759 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A316E367F100C05759 /* main.cpp */; };
+		EB5318AE16E367F100C05759 /* myChair.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A416E367F100C05759 /* myChair.cpp */; };
+		EB5318AF16E367F100C05759 /* myTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A616E367F100C05759 /* myTable.cpp */; };
+		EB5318B016E367F100C05759 /* myUnitCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A816E367F100C05759 /* myUnitCube.cpp */; };
+		EB5318B116E367F100C05759 /* TPscene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318AA16E367F100C05759 /* TPscene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,11 +64,17 @@
 		AA63E23A16D422CA003287C6 /* pyramid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pyramid.jpg; sourceTree = "<group>"; };
 		AA63E23B16D422CA003287C6 /* texshader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texshader.frag; sourceTree = "<group>"; };
 		AA63E23C16D422CA003287C6 /* texshader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texshader.vert; sourceTree = "<group>"; };
-		EB18BC4716D58F780036DDF0 /* ExampleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExampleObject.cpp; path = src/ExampleObject.cpp; sourceTree = SOURCE_ROOT; };
-		EB18BC4816D58F780036DDF0 /* TPscene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TPscene.cpp; path = src/TPscene.cpp; sourceTree = SOURCE_ROOT; };
-		EB18BC4916D58F780036DDF0 /* ExampleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleObject.h; path = src/ExampleObject.h; sourceTree = SOURCE_ROOT; };
-		EB18BC4A16D58F780036DDF0 /* TPscene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPscene.h; path = src/TPscene.h; sourceTree = SOURCE_ROOT; };
-		EB18BC4B16D58F780036DDF0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		EB5318A116E367F100C05759 /* ExampleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExampleObject.cpp; path = src/ExampleObject.cpp; sourceTree = SOURCE_ROOT; };
+		EB5318A216E367F100C05759 /* ExampleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleObject.h; path = src/ExampleObject.h; sourceTree = SOURCE_ROOT; };
+		EB5318A316E367F100C05759 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		EB5318A416E367F100C05759 /* myChair.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myChair.cpp; path = src/myChair.cpp; sourceTree = SOURCE_ROOT; };
+		EB5318A516E367F100C05759 /* myChair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myChair.h; path = src/myChair.h; sourceTree = SOURCE_ROOT; };
+		EB5318A616E367F100C05759 /* myTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myTable.cpp; path = src/myTable.cpp; sourceTree = SOURCE_ROOT; };
+		EB5318A716E367F100C05759 /* myTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myTable.h; path = src/myTable.h; sourceTree = SOURCE_ROOT; };
+		EB5318A816E367F100C05759 /* myUnitCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myUnitCube.cpp; path = src/myUnitCube.cpp; sourceTree = SOURCE_ROOT; };
+		EB5318A916E367F100C05759 /* myUnitCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myUnitCube.h; path = src/myUnitCube.h; sourceTree = SOURCE_ROOT; };
+		EB5318AA16E367F100C05759 /* TPscene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TPscene.cpp; path = src/TPscene.cpp; sourceTree = SOURCE_ROOT; };
+		EB5318AB16E367F100C05759 /* TPscene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPscene.h; path = src/TPscene.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +116,17 @@
 		AA63E1AD16D41531003287C6 /* CGFExample */ = {
 			isa = PBXGroup;
 			children = (
-				EB18BC4716D58F780036DDF0 /* ExampleObject.cpp */,
-				EB18BC4916D58F780036DDF0 /* ExampleObject.h */,
-				EB18BC4816D58F780036DDF0 /* TPscene.cpp */,
-				EB18BC4A16D58F780036DDF0 /* TPscene.h */,
-				EB18BC4B16D58F780036DDF0 /* main.cpp */,
+				EB5318A116E367F100C05759 /* ExampleObject.cpp */,
+				EB5318A216E367F100C05759 /* ExampleObject.h */,
+				EB5318A316E367F100C05759 /* main.cpp */,
+				EB5318A416E367F100C05759 /* myChair.cpp */,
+				EB5318A516E367F100C05759 /* myChair.h */,
+				EB5318A616E367F100C05759 /* myTable.cpp */,
+				EB5318A716E367F100C05759 /* myTable.h */,
+				EB5318A816E367F100C05759 /* myUnitCube.cpp */,
+				EB5318A916E367F100C05759 /* myUnitCube.h */,
+				EB5318AA16E367F100C05759 /* TPscene.cpp */,
+				EB5318AB16E367F100C05759 /* TPscene.h */,
 			);
 			path = CGFExample;
 			sourceTree = "<group>";
@@ -211,9 +226,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB18BC4C16D58F780036DDF0 /* ExampleObject.cpp in Sources */,
-				EB18BC4D16D58F780036DDF0 /* TPscene.cpp in Sources */,
-				EB18BC4E16D58F780036DDF0 /* main.cpp in Sources */,
+				EB5318AC16E367F100C05759 /* ExampleObject.cpp in Sources */,
+				EB5318AD16E367F100C05759 /* main.cpp in Sources */,
+				EB5318AE16E367F100C05759 /* myChair.cpp in Sources */,
+				EB5318AF16E367F100C05759 /* myTable.cpp in Sources */,
+				EB5318B016E367F100C05759 /* myUnitCube.cpp in Sources */,
+				EB5318B116E367F100C05759 /* TPscene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
