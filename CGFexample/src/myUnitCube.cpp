@@ -2,14 +2,10 @@
 
 void myUnitCube::draw() 
 {
-    
-    glEnable(GL_NORMALIZE);
-    
 	//FRONT
 	glPushMatrix();
 	glTranslated(0,0,0.5);
     glNormal3f(0,0,1);
-    
 	glRectd(0.5, 0.5, -0.5, -0.5);
 	glPopMatrix();
 
@@ -18,7 +14,6 @@ void myUnitCube::draw()
 	glRotated(180,0,1,0);
 	glTranslated(0,0,0.5);
     glNormal3f(0,0,1);
-
 	glRectd(0.5, 0.5, -0.5, -0.5);
 	glPopMatrix();
 
@@ -27,7 +22,6 @@ void myUnitCube::draw()
 	glRotated(-90,0,1,0);
 	glTranslated(0,0,0.5);
     glNormal3f(0,0,1);
-
 	glRectd(0.5, 0.5, -0.5, -0.5);
 	glPopMatrix();
 
@@ -36,16 +30,14 @@ void myUnitCube::draw()
 	glRotated(90,0,1,0);
 	glTranslated(0,0,0.5);
     glNormal3f(0,0,1);
-
 	glRectd(0.5, 0.5, -0.5, -0.5);
 	glPopMatrix();
-
+    
 	//TOP
 	glPushMatrix();
 	glTranslated(0,0.5,0);
 	glRotated(-90,1,0,0);
     glNormal3f(0,0,1);
-
 	glRectd(0.5, 0.5, -0.5, -0.5);
 	glPopMatrix();
 
@@ -54,7 +46,6 @@ void myUnitCube::draw()
 	glTranslated(0,-0.5,0);
 	glRotated(90,1,0,0);
     glNormal3f(0,0,1);
-
 	glRectd(0.5, 0.5, -0.5, -0.5);
 	glPopMatrix();
 	

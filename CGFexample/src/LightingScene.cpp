@@ -73,7 +73,7 @@ void LightingScene::init()
 	light1->enable();
 	
 	// Uncomment below to enable normalization of lighting normal vectors
-	// glEnable (GL_NORMALIZE);
+	glEnable (GL_NORMALIZE);
 
 	//Declares scene elements
 	table = new myTable();
