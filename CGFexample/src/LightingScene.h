@@ -15,6 +15,9 @@ public:
 
 	CGFlight* light0;
 	CGFlight* light1;
+    CGFlight* light2;
+	CGFlight* light3;
+
 
 	myTable* table;
 	Plane* wall;
