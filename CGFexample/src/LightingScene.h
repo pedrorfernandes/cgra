@@ -5,6 +5,7 @@
 #include "CGFappearance.h"
 #include "myTable.h"
 #include "Plane.h"
+#include "myChair.h"
 
 class LightingScene : public CGFscene
 {
@@ -19,6 +20,7 @@ public:
 	Plane* wall;
 	Plane* boardA;
 	Plane* boardB;
+    myChair* chair;
 	CGFappearance* materialA;
 	CGFappearance* materialB;
 

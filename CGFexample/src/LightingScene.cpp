@@ -20,17 +20,21 @@ float light2_pos[4] = {10.5, 6.0, 5.0, 1.0};
 float light3_pos[4] = {4, 6.0, 5.0, 1.0};
 
 // Global ambient light (do not confuse with ambient component of individual lights)
-float globalAmbientLight[4]= {0.2,0.2,0.2,1.0};
+//float globalAmbientLight[4]= {0.2,0.2,0.2,1.0};
+float globalAmbientLight[4]= {0, 0, 0, 1.0};
+
 
 // number of divisions
-#define BOARD_A_DIVISIONS 1
+#define BOARD_A_DIVISIONS 30
 #define BOARD_B_DIVISIONS 100
 
 // Coefficients for material A
 float ambA[3] = {0.2, 0.2, 0.2};
 float difA[3] = {0.6, 0.6, 0.6};
-float specA[3] = {0.2, 0.2, 0.2};
-float shininessA = 10.f;
+//float specA[3] = {0.2, 0.2, 0.2};
+float specA[3] = {0 ,0 , 0.8};
+//float shininessA = 10.f;
+float shininessA = 120.f;
 
 // Coefficients for material B
 float ambB[3] = {0.2, 0.2, 0.2};
@@ -57,15 +61,16 @@ void LightingScene::init()
 
 	light0 = new CGFlight(GL_LIGHT0, light0_pos);
 	light0->setAmbient(ambientNull);
+    light0->setSpecular(yellow);
 
-	light0->disable();
-	//light0->enable();
+	//light0->disable();
+	light0->enable();
 
 	light1 = new CGFlight(GL_LIGHT1, light1_pos);
 	light1->setAmbient(ambientNull);
 	
-	light1->disable();
-	//light1->enable();
+	//light1->disable();
+	light1->enable();
 	
 	// Uncomment below to enable normalization of lighting normal vectors
 	// glEnable (GL_NORMALIZE);
@@ -75,6 +80,7 @@ void LightingScene::init()
 	wall = new Plane();
 	boardA = new Plane(BOARD_A_DIVISIONS);
 	boardB = new Plane(BOARD_B_DIVISIONS);
+    chair = new myChair();
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);
@@ -118,7 +124,12 @@ void LightingScene::display()
 		glTranslated(12,0,8);
 		table->draw();
 	glPopMatrix();
-
+    
+    glPushMatrix();
+        glTranslated(12, 0, 4);
+        chair->draw();
+    glPopMatrix();
+    
 	//Floor
 	glPushMatrix();
 		glTranslated(7.5,0,7.5);
