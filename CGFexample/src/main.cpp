@@ -7,7 +7,7 @@
 #include <exception>
 
 #include "CGFapplication.h"
-#include "TPscene.h"
+#include "LightingScene.h"
 
 using std::cout;
 using std::exception;
@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
 	try {
 		app.init(&argc, argv);
 
-		app.setScene(new TPscene());
+		app.setScene(new LightingScene());
 		app.setInterface(new CGFinterface());
 		
 		app.run();
