@@ -3,6 +3,7 @@
 
 #include "CGFobject.h"
 #include "myUnitCube.h"
+#include "CGFappearance.h"
 
 #define CHAIR_SIT_X 2.75
 #define CHAIR_SIT_Y 0.15
@@ -22,6 +23,9 @@
 
 class myChair: public CGFobject {
 private:
+
+	CGFappearance* materialW;
+	CGFappearance* materialDM;
 
 	myUnitCube myCube;
 

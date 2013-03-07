@@ -6,7 +6,6 @@
 #include <GL/GLU.h>
 #endif
 
-
 Plane::Plane(void)
 {
 	_numDivisions = 1;

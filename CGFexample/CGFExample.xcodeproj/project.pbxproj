@@ -16,13 +16,13 @@
 		AA63E23F16D422F1003287C6 /* pyramid.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23A16D422CA003287C6 /* pyramid.jpg */; };
 		AA63E24016D422F1003287C6 /* texshader.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23B16D422CA003287C6 /* texshader.frag */; };
 		AA63E24116D422F1003287C6 /* texshader.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23C16D422CA003287C6 /* texshader.vert */; };
-		EB0E1ED616E65AB900B0A135 /* LightingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB0E1ED216E65AB900B0A135 /* LightingScene.cpp */; };
-		EB0E1ED716E65AB900B0A135 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB0E1ED416E65AB900B0A135 /* Plane.cpp */; };
-		EB5318AC16E367F100C05759 /* ExampleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A116E367F100C05759 /* ExampleObject.cpp */; };
-		EB5318AD16E367F100C05759 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A316E367F100C05759 /* main.cpp */; };
-		EB5318AE16E367F100C05759 /* myChair.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A416E367F100C05759 /* myChair.cpp */; };
-		EB5318AF16E367F100C05759 /* myTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A616E367F100C05759 /* myTable.cpp */; };
-		EB5318B016E367F100C05759 /* myUnitCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5318A816E367F100C05759 /* myUnitCube.cpp */; };
+		EB564CA416E8F5E600A7D1E7 /* ExampleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564C9716E8F5E600A7D1E7 /* ExampleObject.cpp */; };
+		EB564CA516E8F5E600A7D1E7 /* LightingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564C9916E8F5E600A7D1E7 /* LightingScene.cpp */; };
+		EB564CA616E8F5E600A7D1E7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564C9B16E8F5E600A7D1E7 /* main.cpp */; };
+		EB564CA716E8F5E600A7D1E7 /* myChair.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564C9C16E8F5E600A7D1E7 /* myChair.cpp */; };
+		EB564CA816E8F5E600A7D1E7 /* myTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564C9E16E8F5E600A7D1E7 /* myTable.cpp */; };
+		EB564CA916E8F5E600A7D1E7 /* myUnitCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564CA016E8F5E600A7D1E7 /* myUnitCube.cpp */; };
+		EB564CAA16E8F5E600A7D1E7 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564CA216E8F5E600A7D1E7 /* Plane.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,19 +65,19 @@
 		AA63E23A16D422CA003287C6 /* pyramid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pyramid.jpg; sourceTree = "<group>"; };
 		AA63E23B16D422CA003287C6 /* texshader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texshader.frag; sourceTree = "<group>"; };
 		AA63E23C16D422CA003287C6 /* texshader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texshader.vert; sourceTree = "<group>"; };
-		EB0E1ED216E65AB900B0A135 /* LightingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LightingScene.cpp; path = src/LightingScene.cpp; sourceTree = SOURCE_ROOT; };
-		EB0E1ED316E65AB900B0A135 /* LightingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightingScene.h; path = src/LightingScene.h; sourceTree = SOURCE_ROOT; };
-		EB0E1ED416E65AB900B0A135 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Plane.cpp; path = src/Plane.cpp; sourceTree = SOURCE_ROOT; };
-		EB0E1ED516E65AB900B0A135 /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plane.h; path = src/Plane.h; sourceTree = SOURCE_ROOT; };
-		EB5318A116E367F100C05759 /* ExampleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExampleObject.cpp; path = src/ExampleObject.cpp; sourceTree = SOURCE_ROOT; };
-		EB5318A216E367F100C05759 /* ExampleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleObject.h; path = src/ExampleObject.h; sourceTree = SOURCE_ROOT; };
-		EB5318A316E367F100C05759 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
-		EB5318A416E367F100C05759 /* myChair.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myChair.cpp; path = src/myChair.cpp; sourceTree = SOURCE_ROOT; };
-		EB5318A516E367F100C05759 /* myChair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myChair.h; path = src/myChair.h; sourceTree = SOURCE_ROOT; };
-		EB5318A616E367F100C05759 /* myTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myTable.cpp; path = src/myTable.cpp; sourceTree = SOURCE_ROOT; };
-		EB5318A716E367F100C05759 /* myTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myTable.h; path = src/myTable.h; sourceTree = SOURCE_ROOT; };
-		EB5318A816E367F100C05759 /* myUnitCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myUnitCube.cpp; path = src/myUnitCube.cpp; sourceTree = SOURCE_ROOT; };
-		EB5318A916E367F100C05759 /* myUnitCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myUnitCube.h; path = src/myUnitCube.h; sourceTree = SOURCE_ROOT; };
+		EB564C9716E8F5E600A7D1E7 /* ExampleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExampleObject.cpp; path = src/ExampleObject.cpp; sourceTree = SOURCE_ROOT; };
+		EB564C9816E8F5E600A7D1E7 /* ExampleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleObject.h; path = src/ExampleObject.h; sourceTree = SOURCE_ROOT; };
+		EB564C9916E8F5E600A7D1E7 /* LightingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LightingScene.cpp; path = src/LightingScene.cpp; sourceTree = SOURCE_ROOT; };
+		EB564C9A16E8F5E600A7D1E7 /* LightingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightingScene.h; path = src/LightingScene.h; sourceTree = SOURCE_ROOT; };
+		EB564C9B16E8F5E600A7D1E7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		EB564C9C16E8F5E600A7D1E7 /* myChair.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myChair.cpp; path = src/myChair.cpp; sourceTree = SOURCE_ROOT; };
+		EB564C9D16E8F5E600A7D1E7 /* myChair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myChair.h; path = src/myChair.h; sourceTree = SOURCE_ROOT; };
+		EB564C9E16E8F5E600A7D1E7 /* myTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myTable.cpp; path = src/myTable.cpp; sourceTree = SOURCE_ROOT; };
+		EB564C9F16E8F5E600A7D1E7 /* myTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myTable.h; path = src/myTable.h; sourceTree = SOURCE_ROOT; };
+		EB564CA016E8F5E600A7D1E7 /* myUnitCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myUnitCube.cpp; path = src/myUnitCube.cpp; sourceTree = SOURCE_ROOT; };
+		EB564CA116E8F5E600A7D1E7 /* myUnitCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myUnitCube.h; path = src/myUnitCube.h; sourceTree = SOURCE_ROOT; };
+		EB564CA216E8F5E600A7D1E7 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Plane.cpp; path = src/Plane.cpp; sourceTree = SOURCE_ROOT; };
+		EB564CA316E8F5E600A7D1E7 /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plane.h; path = src/Plane.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,19 +119,19 @@
 		AA63E1AD16D41531003287C6 /* CGFExample */ = {
 			isa = PBXGroup;
 			children = (
-				EB0E1ED216E65AB900B0A135 /* LightingScene.cpp */,
-				EB0E1ED316E65AB900B0A135 /* LightingScene.h */,
-				EB0E1ED416E65AB900B0A135 /* Plane.cpp */,
-				EB0E1ED516E65AB900B0A135 /* Plane.h */,
-				EB5318A116E367F100C05759 /* ExampleObject.cpp */,
-				EB5318A216E367F100C05759 /* ExampleObject.h */,
-				EB5318A316E367F100C05759 /* main.cpp */,
-				EB5318A416E367F100C05759 /* myChair.cpp */,
-				EB5318A516E367F100C05759 /* myChair.h */,
-				EB5318A616E367F100C05759 /* myTable.cpp */,
-				EB5318A716E367F100C05759 /* myTable.h */,
-				EB5318A816E367F100C05759 /* myUnitCube.cpp */,
-				EB5318A916E367F100C05759 /* myUnitCube.h */,
+				EB564C9716E8F5E600A7D1E7 /* ExampleObject.cpp */,
+				EB564C9816E8F5E600A7D1E7 /* ExampleObject.h */,
+				EB564C9916E8F5E600A7D1E7 /* LightingScene.cpp */,
+				EB564C9A16E8F5E600A7D1E7 /* LightingScene.h */,
+				EB564C9B16E8F5E600A7D1E7 /* main.cpp */,
+				EB564C9C16E8F5E600A7D1E7 /* myChair.cpp */,
+				EB564C9D16E8F5E600A7D1E7 /* myChair.h */,
+				EB564C9E16E8F5E600A7D1E7 /* myTable.cpp */,
+				EB564C9F16E8F5E600A7D1E7 /* myTable.h */,
+				EB564CA016E8F5E600A7D1E7 /* myUnitCube.cpp */,
+				EB564CA116E8F5E600A7D1E7 /* myUnitCube.h */,
+				EB564CA216E8F5E600A7D1E7 /* Plane.cpp */,
+				EB564CA316E8F5E600A7D1E7 /* Plane.h */,
 			);
 			path = CGFExample;
 			sourceTree = "<group>";
@@ -231,13 +231,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB5318AC16E367F100C05759 /* ExampleObject.cpp in Sources */,
-				EB5318AD16E367F100C05759 /* main.cpp in Sources */,
-				EB5318AE16E367F100C05759 /* myChair.cpp in Sources */,
-				EB5318AF16E367F100C05759 /* myTable.cpp in Sources */,
-				EB5318B016E367F100C05759 /* myUnitCube.cpp in Sources */,
-				EB0E1ED616E65AB900B0A135 /* LightingScene.cpp in Sources */,
-				EB0E1ED716E65AB900B0A135 /* Plane.cpp in Sources */,
+				EB564CA416E8F5E600A7D1E7 /* ExampleObject.cpp in Sources */,
+				EB564CA516E8F5E600A7D1E7 /* LightingScene.cpp in Sources */,
+				EB564CA616E8F5E600A7D1E7 /* main.cpp in Sources */,
+				EB564CA716E8F5E600A7D1E7 /* myChair.cpp in Sources */,
+				EB564CA816E8F5E600A7D1E7 /* myTable.cpp in Sources */,
+				EB564CA916E8F5E600A7D1E7 /* myUnitCube.cpp in Sources */,
+				EB564CAA16E8F5E600A7D1E7 /* Plane.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
