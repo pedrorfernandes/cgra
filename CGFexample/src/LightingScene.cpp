@@ -47,6 +47,7 @@ void LightingScene::init()
 	srand((time(NULL)));
 
 	// Enables lighting computations
+    glShadeModel(GL_FLAT);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_NORMALIZE);
 
