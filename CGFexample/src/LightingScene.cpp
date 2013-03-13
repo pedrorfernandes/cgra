@@ -49,8 +49,7 @@ void LightingScene::init()
 	// Enables lighting computations
     glShadeModel(GL_FLAT);
 	glEnable(GL_LIGHTING);
-	glEnable(GL_NORMALIZE);
-
+    
 	// Sets up some lighting parameters
 	// Computes lighting only using the front face normals and materials
 	glLightModelf(GL_LIGHT_MODEL_TWO_SIDE, GL_FALSE);  
@@ -92,7 +91,7 @@ void LightingScene::init()
 	light3->enable();
 	
 	// Uncomment below to enable normalization of lighting normal vectors
-	// glEnable (GL_NORMALIZE);
+    glEnable (GL_NORMALIZE);
 
 	//Declares scene elements
 	table = new myTable();
@@ -100,6 +99,7 @@ void LightingScene::init()
 	wall = new Plane();
 	boardA = new Plane(BOARD_A_DIVISIONS);
 	boardB = new Plane(BOARD_B_DIVISIONS);
+    cylinder = new myCylinder(20, 5);
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);
@@ -121,7 +121,7 @@ void LightingScene::display()
 
 	// Apply transformations corresponding to the camera position relative to the origin
 	CGFscene::activeCamera->applyView();
-
+    
 	light0->draw();
 	light1->draw();
 	light2->draw();
@@ -134,8 +134,13 @@ void LightingScene::display()
 
 	// ---- BEGIN Primitive drawing section
 
-	
-
+	glPushMatrix();
+        glTranslated(2.0, 0.0, 2.0);
+        glScaled(1.0, 8.0, 1.0);
+        glRotated(-90, 1.0, 0.0, 0.0);
+        cylinder->draw();
+	glPopMatrix();
+    
 	//Floor
 	glPushMatrix();
 		glTranslated(7.5,0,7.5);
@@ -147,7 +152,6 @@ void LightingScene::display()
 	glPushMatrix();
 		glTranslated(0,4,7.5);
 		glRotated(-90.0,0,0,1);
-
 		glScaled(8,0.2,15);
 		wall->draw();
 	glPopMatrix();

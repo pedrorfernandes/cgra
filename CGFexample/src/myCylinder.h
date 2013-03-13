@@ -7,11 +7,23 @@
 #include "CGF/CGFobject.h"
 #endif
 
+#include <math.h>
+#include <vector>
+
+#define PI 3.14159265359
+
+using namespace std;
+
 class myCylinder : public CGFobject {
-
-	public:
-		myCylinder(int slices, int stacks/*, bool smooth*/);
-
+    int slices;
+    int stacks;
+    vector<float> x;
+    vector<float> y;
+    float zStep;
+public:
+    myCylinder(int slices, int stacks/*, bool smooth*/);
+    void draw();
+    
 };
 
 
