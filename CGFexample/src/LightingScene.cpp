@@ -21,7 +21,7 @@ float light2_pos[4] = {10.5, 6.0, 5.0, 1.0};
 float light3_pos[4] = {4, 6.0, 5.0, 1.0};
 
 // Global ambient light (do not confuse with ambient component of individual lights)
-float globalAmbientLight[4]= {0.0,0.0,0.0,1.0};
+float globalAmbientLight[4]= {0.0, 0.0, 0.0, 1.0};
 
 // number of divisions
 #define BOARD_A_DIVISIONS 30
@@ -41,6 +41,9 @@ float shininessB = 120.f;
 
 float ambientNull[4]={0,0,0,1};
 float yellow[4]={1,1,0,1};
+
+#define CYLINDER_STACKS 10
+#define CYLINDER_SLICES 10
 
 void LightingScene::init() 
 {
@@ -99,7 +102,8 @@ void LightingScene::init()
 	wall = new Plane();
 	boardA = new Plane(BOARD_A_DIVISIONS);
 	boardB = new Plane(BOARD_B_DIVISIONS);
-    cylinder = new myCylinder(20, 5);
+    cylinderA = new myCylinder(CYLINDER_SLICES, CYLINDER_STACKS, true);
+    cylinderB = new myCylinder(CYLINDER_SLICES, CYLINDER_STACKS, false);
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);
@@ -135,10 +139,19 @@ void LightingScene::display()
 	// ---- BEGIN Primitive drawing section
 
 	glPushMatrix();
-        glTranslated(2.0, 0.0, 2.0);
+        glTranslated(2.0, 0.0, 1.5);
         glScaled(1.0, 8.0, 1.0);
         glRotated(-90, 1.0, 0.0, 0.0);
-        cylinder->draw();
+        // smooth
+        cylinderA->draw();
+	glPopMatrix();
+    
+    glPushMatrix();
+        glTranslated(7.0, 0.0, 1.5);
+        glScaled(1.0, 8.0, 1.0);
+        glRotated(-90, 1.0, 0.0, 0.0);
+        // not smooth
+        cylinderB->draw();
 	glPopMatrix();
     
 	//Floor
