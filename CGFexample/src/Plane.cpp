@@ -1,10 +1,7 @@
 #include "Plane.h"
 #include "myUnitCube.h"
-#ifdef __APPLE__
-#include <OpenGL/glu.h>
-#else
 #include <GL/GLU.h>
-#endif
+
 
 Plane::Plane(void)
 {

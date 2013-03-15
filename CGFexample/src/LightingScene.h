@@ -26,7 +26,8 @@ public:
 	Plane* boardB;
 	CGFappearance* materialA;
 	CGFappearance* materialB;
-    myCylinder* cylinder;
+
+	myCylinder* cylinder;
 
 	~LightingScene();
 };
