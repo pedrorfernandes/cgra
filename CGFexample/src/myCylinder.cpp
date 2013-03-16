@@ -10,11 +10,15 @@ slices(slices), stacks(stacks), smooth(smooth) {
     }
     
     zStep = (1.0 / stacks);
-    double xn = (x.at(1)+x.at(0)) / 2.0;
-    double yn = (y.at(1)+y.at(0)) / 2.0;
-    double norm = sqrt(xn*xn + yn*yn);
-    normNotSmooth.push_back( xn / norm);
-    normNotSmooth.push_back( yn / norm);
+    
+    double xn, yn, norm;
+    for(int i = 0; i < x.size()-1; i++){
+        xn = (x.at(i+1)+x.at(i)) / 2.0;
+        yn = (y.at(i+1)+y.at(i)) / 2.0;
+        norm = sqrt(xn*xn + yn*yn);
+        notSmoothX.push_back( xn / norm);
+        notSmoothY.push_back( yn / norm);
+    }
 }
 
 void myCylinder::draw(){
@@ -23,7 +27,7 @@ void myCylinder::draw(){
     // Drawn clockwise
     glBegin(GL_POLYGON);
     for(int i = x.size()-1; i >= 0 ; i--) {
-        glNormal3d(0, 0, -1);
+        glNormal3d(x.at(i), y.at(i), -1.0);
         glVertex3d( x.at(i), y.at(i), 0.0);
     }
     glEnd();
@@ -31,46 +35,43 @@ void myCylinder::draw(){
     // Top (drawn anticlockwise)
     glBegin(GL_POLYGON);
     for(int i = 0; i < x.size() ; i++) {
-        glNormal3d(0, 0, 1);
+        glNormal3d(x.at(i), y.at(i), 1.0);
         glVertex3d(x.at(i), y.at(i), 1.0);
     }
     glEnd();
     
-    for (double angle = 0.0; angle < 360.0; angle += (360.0 / slices) ) {
+    for(int i = 0; i < x.size()-1; i++){
         glPushMatrix();
-        glRotated(angle, 0.0, 0.0, 1.0);
         for (double z = 0.0; z < (1.0-zStep/2.0); z += zStep) {
-            // rotate and then draw a slice
             glBegin(GL_QUADS);
             // draw only 1 slice (4 points in space)
             // point A (bottom)
             if (smooth)
-                glNormal3d(x.at(0), y.at(0), 0.0);
+                glNormal3d(x.at(i), y.at(i), z);
             else
-                glNormal3d(normNotSmooth.at(0), normNotSmooth.at(1), 0.0);
-            glVertex3d(x.at(0), y.at(0), z );
+                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), z);
+            glVertex3d(x.at(i), y.at(i), z );
             
             // point B (bottom)
             if (smooth)
-                glNormal3d(x.at(1), y.at(1), 0.0);
+                glNormal3d(x.at(i+1), y.at(i+1), z);
             else
-                glNormal3d(normNotSmooth.at(0), normNotSmooth.at(1), 0.0);
-            glVertex3d(x.at(1), y.at(1), z);
+                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), z);
+            glVertex3d(x.at(i+1), y.at(i+1), z);
             
             // point B' (top)
             if (smooth)
-                glNormal3d(x.at(1), y.at(1), 0.0);
+                glNormal3d(x.at(i+1), y.at(i+1), z+zStep);
             else
-                glNormal3d(normNotSmooth.at(0), normNotSmooth.at(1), 0.0);
-            glVertex3d(x.at(1), y.at(1), z+zStep );
+                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), z+zStep);
+            glVertex3d(x.at(i+1), y.at(i+1), z+zStep );
             
             // point A' (top)
             if (smooth)
-                glNormal3d(x.at(0), y.at(0), 0.0);
+                glNormal3d(x.at(i), y.at(i), z+zStep);
             else
-                glNormal3d(normNotSmooth.at(0), normNotSmooth.at(1), 0.0);
-            glVertex3d(x.at(0), y.at(0), z+zStep );
-
+                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), z+zStep);
+            glVertex3d(x.at(i), y.at(i), z+zStep );
             glEnd();
         }
         glPopMatrix();

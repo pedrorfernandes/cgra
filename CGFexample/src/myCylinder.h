@@ -22,7 +22,8 @@ class myCylinder : public CGFobject {
     vector<double> y;
     double zStep;
     bool smooth;
-    vector<double> normNotSmooth;
+    vector<double> notSmoothX;
+    vector<double> notSmoothY;
 public:
     myCylinder(int slices, int stacks, bool smooth);
     void draw();
