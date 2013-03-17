@@ -43,14 +43,14 @@ float ambientNull[4]={0,0,0,1};
 float yellow[4]={1,1,0,1};
 
 #define CYLINDER_STACKS 10
-#define CYLINDER_SLICES 6
+#define CYLINDER_SLICES 10
 
 void LightingScene::init() 
 {
 	srand((time(NULL)));
 
 	// Enables lighting computations
-    glShadeModel(GL_SMOOTH);
+    //glShadeModel(GL_FLAT);
 	glEnable(GL_LIGHTING);
     
 	// Sets up some lighting parameters
