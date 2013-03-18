@@ -21,7 +21,7 @@ float light2_pos[4] = {10.5, 6.0, 5.0, 1.0};
 float light3_pos[4] = {4, 6.0, 5.0, 1.0};
 
 // Global ambient light (do not confuse with ambient component of individual lights)
-float globalAmbientLight[4]= {0.0, 0.0, 0.0, 1.0};
+float globalAmbientLight[4]= {0.1, 0.1, 0.1, 1.0};
 
 // number of divisions
 #define BOARD_A_DIVISIONS 30
@@ -44,6 +44,8 @@ float yellow[4]={1,1,0,1};
 
 #define CYLINDER_STACKS 10
 #define CYLINDER_SLICES 10
+#define CIRCLE_STACKS 5
+#define CIRCLE_SLICES 5
 
 void LightingScene::init() 
 {
@@ -51,6 +53,7 @@ void LightingScene::init()
 
 	// Enables lighting computations
     //glShadeModel(GL_FLAT);
+    //glShadeModel(GL_SMOOTH);
 	glEnable(GL_LIGHTING);
     
 	// Sets up some lighting parameters
@@ -104,6 +107,7 @@ void LightingScene::init()
 	boardB = new Plane(BOARD_B_DIVISIONS);
     cylinderA = new myCylinder(CYLINDER_SLICES, CYLINDER_STACKS, true);
     cylinderB = new myCylinder(CYLINDER_SLICES, CYLINDER_STACKS, false);
+    lamp = new myLamp(CIRCLE_SLICES, CIRCLE_STACKS);
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);
@@ -137,7 +141,14 @@ void LightingScene::display()
 	// ---- END Background, camera and axis setup
 
 	// ---- BEGIN Primitive drawing section
-
+    
+	glPushMatrix();
+    glTranslated(7.5, 8.0, 7.5);
+    glRotated(90, 1.0, 0.0, 0.0);
+    lamp->draw();
+    glPopMatrix();
+    
+    // smooth cylinder
 	glPushMatrix();
         glTranslated(2.0, 0.0, 1.5);
         glScaled(1.0, 8.0, 1.0);
@@ -146,6 +157,7 @@ void LightingScene::display()
         cylinderA->draw();
 	glPopMatrix();
     
+    // flat cylinder
     glPushMatrix();
         glTranslated(7.0, 0.0, 1.5);
         glScaled(1.0, 8.0, 1.0);
@@ -177,7 +189,6 @@ void LightingScene::display()
 		wall->draw();
 	glPopMatrix();
 
-
 	// Board A
 	glPushMatrix();
 		glTranslated(4,4,0.2);
@@ -196,7 +207,6 @@ void LightingScene::display()
 		boardB->draw();
 	glPopMatrix();
 
-
 	//First Table
 	glPushMatrix();
 		glTranslated(5,0,8);
@@ -214,6 +224,7 @@ void LightingScene::display()
 		glTranslated(12, 0, 4);
 		chair->draw();
 	glPopMatrix();
+     
 	
 	// ---- END Primitive drawing section
 	

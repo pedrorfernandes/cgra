@@ -23,6 +23,7 @@
 		EB564CA816E8F5E600A7D1E7 /* myTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564C9E16E8F5E600A7D1E7 /* myTable.cpp */; };
 		EB564CA916E8F5E600A7D1E7 /* myUnitCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564CA016E8F5E600A7D1E7 /* myUnitCube.cpp */; };
 		EB564CAA16E8F5E600A7D1E7 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564CA216E8F5E600A7D1E7 /* Plane.cpp */; };
+		EB59FD0916F7B6D700BC45EA /* myLamp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB59FD0716F7B6D700BC45EA /* myLamp.cpp */; };
 		EBD2B47116EF7799008A2DD0 /* myCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD2B46F16EF7799008A2DD0 /* myCylinder.cpp */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		EB564CA116E8F5E600A7D1E7 /* myUnitCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myUnitCube.h; path = src/myUnitCube.h; sourceTree = SOURCE_ROOT; };
 		EB564CA216E8F5E600A7D1E7 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Plane.cpp; path = src/Plane.cpp; sourceTree = SOURCE_ROOT; };
 		EB564CA316E8F5E600A7D1E7 /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plane.h; path = src/Plane.h; sourceTree = SOURCE_ROOT; };
+		EB59FD0716F7B6D700BC45EA /* myLamp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = myLamp.cpp; sourceTree = SOURCE_ROOT; };
+		EB59FD0816F7B6D700BC45EA /* myLamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myLamp.h; sourceTree = SOURCE_ROOT; };
 		EBD2B46F16EF7799008A2DD0 /* myCylinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myCylinder.cpp; path = src/myCylinder.cpp; sourceTree = SOURCE_ROOT; };
 		EBD2B47016EF7799008A2DD0 /* myCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myCylinder.h; path = src/myCylinder.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -137,6 +140,8 @@
 				EB564CA316E8F5E600A7D1E7 /* Plane.h */,
 				EBD2B46F16EF7799008A2DD0 /* myCylinder.cpp */,
 				EBD2B47016EF7799008A2DD0 /* myCylinder.h */,
+				EB59FD0716F7B6D700BC45EA /* myLamp.cpp */,
+				EB59FD0816F7B6D700BC45EA /* myLamp.h */,
 			);
 			path = CGFExample;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				EB564CA916E8F5E600A7D1E7 /* myUnitCube.cpp in Sources */,
 				EB564CAA16E8F5E600A7D1E7 /* Plane.cpp in Sources */,
 				EBD2B47116EF7799008A2DD0 /* myCylinder.cpp in Sources */,
+				EB59FD0916F7B6D700BC45EA /* myLamp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

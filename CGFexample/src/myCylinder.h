@@ -11,7 +11,6 @@
 #include <vector>
 
 #define PI 3.14159265359
-#define COS45 0.52532198881
 
 using namespace std;
 
@@ -29,7 +28,5 @@ public:
     void draw();
     
 };
-
-
 
 #endif
