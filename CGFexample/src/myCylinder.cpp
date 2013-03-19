@@ -47,30 +47,30 @@ void myCylinder::draw(){
             // draw only 1 slice (4 points in space)
             // point A (bottom)
             if (smooth)
-                glNormal3d(x.at(i), y.at(i), z);
+                glNormal3d(x.at(i), y.at(i), 0.0);
             else
-                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), z);
+                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
             glVertex3d(x.at(i), y.at(i), z );
             
             // point B (bottom)
             if (smooth)
-                glNormal3d(x.at(i+1), y.at(i+1), z);
+                glNormal3d(x.at(i+1), y.at(i+1), 0.0);
             else
-                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), z);
+                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
             glVertex3d(x.at(i+1), y.at(i+1), z);
             
             // point B' (top)
             if (smooth)
-                glNormal3d(x.at(i+1), y.at(i+1), z+zStep);
+                glNormal3d(x.at(i+1), y.at(i+1), 0.0);
             else
-                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), z+zStep);
+                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
             glVertex3d(x.at(i+1), y.at(i+1), z+zStep );
             
             // point A' (top)
             if (smooth)
-                glNormal3d(x.at(i), y.at(i), z+zStep);
+                glNormal3d(x.at(i), y.at(i), 0.0);
             else
-                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), z+zStep);
+                glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
             glVertex3d(x.at(i), y.at(i), z+zStep );
             glEnd();
         }

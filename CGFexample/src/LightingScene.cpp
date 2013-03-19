@@ -45,7 +45,7 @@ float yellow[4]={1,1,0,1};
 #define CYLINDER_STACKS 10
 #define CYLINDER_SLICES 10
 #define CIRCLE_STACKS 5
-#define CIRCLE_SLICES 5
+#define CIRCLE_SLICES 6
 
 void LightingScene::init() 
 {
@@ -143,9 +143,9 @@ void LightingScene::display()
 	// ---- BEGIN Primitive drawing section
     
 	glPushMatrix();
-    glTranslated(7.5, 8.0, 7.5);
-    glRotated(90, 1.0, 0.0, 0.0);
-    lamp->draw();
+        glTranslated(7.5, 8.0, 7.5);
+        glRotated(90, 1.0, 0.0, 0.0);
+        lamp->draw();
     glPopMatrix();
     
     // smooth cylinder
