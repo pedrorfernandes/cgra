@@ -6,7 +6,7 @@
 #include "myUnitCube.h"
 
 class myTable: public CGFobject {
-
+    
 	CGFappearance* materialW;
 	CGFappearance* materialMB;
 	CGFappearance* materialMBr;
@@ -21,13 +21,8 @@ class myTable: public CGFobject {
 	float magicNumberZ;
 
 	public:
-		void draw();
-
-		myTable() {
-			angle = rand() % 41 - 20;
-			magicNumberX = rand() % 10 / 10 - 0.5;
-			magicNumberZ = rand() % 10 / 10 - 0.5;
-		}
+    void draw();
+    myTable();
 };
 
 class myFloor: public CGFobject {
@@ -36,6 +31,7 @@ class myFloor: public CGFobject {
 
 	public:
 		void draw();
+    
 };
 
 #endif
