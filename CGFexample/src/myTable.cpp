@@ -37,6 +37,9 @@ void myTable::draw()
 	materialMBr = new CGFappearance(ambMBr, difMBr, specMBr, shininessMBr);
 	materialDM = new CGFappearance(ambDM, difDM, specDM, shininessDM);
 	materialR = new CGFappearance(ambR,difR,specR,shininessR);
+    
+    tableAppearance = new CGFappearance(ambW,difW,specW, shininessW);
+    tableAppearance->setTexture("table.png");
 
 	glPushMatrix();
 	glRotated(angle, 0, 1, 0);
@@ -46,7 +49,7 @@ void myTable::draw()
 	glPushMatrix();
 	glTranslated(0, 3.65, 0);
 	glScaled(5, 0.3, 3);
-	materialW->apply();
+	tableAppearance->apply();
 	myCube.draw();
 	glPopMatrix();
 

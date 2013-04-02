@@ -21,7 +21,7 @@ float light2_pos[4] = {10.5, 6.0, 5.0, 1.0};
 float light3_pos[4] = {4, 6.0, 5.0, 1.0};
 
 // Global ambient light (do not confuse with ambient component of individual lights)
-float globalAmbientLight[4]= {0.1, 0.1, 0.1, 1.0};
+float globalAmbientLight[4]= {0.5, 0.5, 0.5, 1.0};
 
 // number of divisions
 #define BOARD_A_DIVISIONS 30

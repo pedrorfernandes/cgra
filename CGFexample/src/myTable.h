@@ -12,6 +12,7 @@ class myTable: public CGFobject {
 	CGFappearance* materialMBr;
 	CGFappearance* materialDM;
 	CGFappearance* materialR;
+    CGFappearance* tableAppearance;
 
 	myUnitCube myCube;
 
