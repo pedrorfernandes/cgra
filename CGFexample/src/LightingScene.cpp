@@ -39,6 +39,18 @@ float difB[3] = {0.6, 0.6, 0.6};
 float specB[3] = {0.8, 0.8, 0.8};
 float shininessB = 120.f;
 
+// Coefficients for projection board
+float ambPB[3] = {0.2, 0.2, 0.2};
+float difPB[3] = {0.6, 0.6, 0.6};
+float specPB[3] = {0.1, 0.1, 0.1};
+float shininessPB = 10.f;
+
+// Coefficients for board
+float ambBD[3] = {0.2, 0.2, 0.2};
+float difBD[3] = {0.6, 0.6, 0.6};
+float specBD[3] = {0.1, 0.1, 0.1};
+float shininessBD = 10.f;
+
 float ambientNull[4]={0,0,0,1};
 float yellow[4]={1,1,0,1};
 
@@ -112,6 +124,12 @@ void LightingScene::init()
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);
 	materialB = new CGFappearance(ambB,difB,specB,shininessB);
+    
+    slidesAppearance = new CGFappearance(ambPB, difPB, specPB, shininessPB);
+    slidesAppearance->setTexture("slides.png");
+    
+    boardAppearance = new CGFappearance(ambBD, difBD, specBD, shininessBD);
+    boardAppearance->setTexture("board.png");
 
 }
 
@@ -150,7 +168,7 @@ void LightingScene::display()
     
     // smooth cylinder
 	glPushMatrix();
-        glTranslated(2.0, 0.0, 1.5);
+        glTranslated(2.0, 0.0, 12.0);
         glScaled(1.0, 8.0, 1.0);
         glRotated(-90, 1.0, 0.0, 0.0);
         // smooth
@@ -159,7 +177,7 @@ void LightingScene::display()
     
     // flat cylinder
     glPushMatrix();
-        glTranslated(7.0, 0.0, 1.5);
+        glTranslated(7.0, 0.0, 12.0);
         glScaled(1.0, 8.0, 1.0);
         glRotated(-90, 1.0, 0.0, 0.0);
         // not smooth
@@ -194,7 +212,7 @@ void LightingScene::display()
 		glTranslated(4,4,0.2);
 		glScaled(BOARD_WIDTH,BOARD_HEIGHT,1);
 		glRotated(90.0,1,0,0);
-		materialA->apply();
+		slidesAppearance->apply();
 		boardA->draw();
 	glPopMatrix();
 	
@@ -203,7 +221,7 @@ void LightingScene::display()
 		glTranslated(10.5,4,0.2);
 		glScaled(BOARD_WIDTH,BOARD_HEIGHT,1);
 		glRotated(90.0,1,0,0);
-		materialB->apply();
+		boardAppearance->apply();
 		boardB->draw();
 	glPopMatrix();
 
