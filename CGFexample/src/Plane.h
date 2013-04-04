@@ -13,7 +13,9 @@ public:
 	Plane(int);
 	~Plane(void);
 	void draw();
+    void setRatio(double);
 private:
-	int _numDivisions; // Number of triangles that constitute rows/columns
+	double _numDivisions; // Number of triangles that constitute rows/columns
+    double _ratio;
 };
 

@@ -130,6 +130,8 @@ void LightingScene::init()
     
     boardAppearance = new CGFappearance(ambBD, difBD, specBD, shininessBD);
     boardAppearance->setTexture("board.png");
+    boardB->setRatio(512.0 / 372.0);
+    boardAppearance->setTextureWrap(GL_REPEAT, GL_CLAMP_TO_EDGE);
 
 }
 
