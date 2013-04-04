@@ -30,9 +30,9 @@ public:
     myCylinder* cylinderA;
     myCylinder* cylinderB;
     myLamp* lamp;
-    
-    CGFappearance* slidesAppearance;
-    CGFappearance* boardAppearance;
+
+	CGFappearance* slidesAppearance;
+	CGFappearance* boardAppearance;
 
 	~LightingScene();
 };

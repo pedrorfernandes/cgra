@@ -32,15 +32,19 @@ void Plane::draw()
 		for (double bx = 0; bx<_numDivisions; bx++)
 		{
 			glBegin(GL_TRIANGLE_STRIP);
-                glTexCoord2d(bx / (double)_numDivisions, 0);
+				glTexCoord2d(bx/_numDivisions,0);
 				glVertex3f(bx, 0, 0);
+
 				for (double bz = 0; bz<_numDivisions; bz++)
 				{
-                    glTexCoord2d( (bx+1)/(double) _numDivisions, bz/(double)_numDivisions);
+					glTexCoord2d((bx+1)/(double) _numDivisions, (bz/(double) _numDivisions) * (512.0/372.0));
 					glVertex3f(bx + 1, 0, bz);
-					glTexCoord2d( bx/(double) _numDivisions, (bz+1)/(double)_numDivisions);
-                    glVertex3f(bx, 0, bz + 1);
+					
+					glTexCoord2d((bx)/(double) _numDivisions, ((bz+1)/(double) _numDivisions) * (512.0/372.0));
+					glVertex3f(bx, 0, bz + 1);
 				}
+				
+					glTexCoord2d((bx+1)/(double) _numDivisions, 1 * (512.0/372.0));
 				glVertex3d(bx+ 1, 0, _numDivisions);
 
 			glEnd();

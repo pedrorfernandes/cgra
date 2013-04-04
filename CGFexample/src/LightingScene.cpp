@@ -33,23 +33,23 @@ float difA[3] = {0.6, 0.6, 0.6};
 float specA[3] = {0, 0.8, 0.8};
 float shininessA = 120.f;
 
-// Coefficients for material B
-float ambB[3] = {0.2, 0.2, 0.2};
-float difB[3] = {0.6, 0.6, 0.6};
-float specB[3] = {0.8, 0.8, 0.8};
-float shininessB = 120.f;
-
-// Coefficients for projection board
+//Coefficients for Projection Board
 float ambPB[3] = {0.2, 0.2, 0.2};
 float difPB[3] = {0.6, 0.6, 0.6};
 float specPB[3] = {0.1, 0.1, 0.1};
 float shininessPB = 10.f;
 
-// Coefficients for board
-float ambBD[3] = {0.2, 0.2, 0.2};
-float difBD[3] = {0.6, 0.6, 0.6};
-float specBD[3] = {0.1, 0.1, 0.1};
-float shininessBD = 10.f;
+//Coefficients for Board
+float ambNB[3] = {0.7, 0.7, 0.7};
+float difNB[3] = {0.4, 0.4, 0.4};
+float specNB[3] = {0.3, 0.3, 0.3};
+float shininessNB = 220.f;
+
+// Coefficients for material B
+float ambB[3] = {0.2, 0.2, 0.2};
+float difB[3] = {0.6, 0.6, 0.6};
+float specB[3] = {0.8, 0.8, 0.8};
+float shininessB = 120.f;
 
 float ambientNull[4]={0,0,0,1};
 float yellow[4]={1,1,0,1};
@@ -124,12 +124,13 @@ void LightingScene::init()
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);
 	materialB = new CGFappearance(ambB,difB,specB,shininessB);
-    
-    slidesAppearance = new CGFappearance(ambPB, difPB, specPB, shininessPB);
-    slidesAppearance->setTexture("slides.png");
-    
-    boardAppearance = new CGFappearance(ambBD, difBD, specBD, shininessBD);
-    boardAppearance->setTexture("board.png");
+
+	slidesAppearance = new CGFappearance(ambPB,difPB,specPB,shininessPB);
+	slidesAppearance->setTexture("textures/slides.png");
+
+	boardAppearance = new CGFappearance(ambNB,difNB,specNB,shininessNB);
+	boardAppearance->setTexture("textures/board.png");
+	boardAppearance->setTextureWrap(GL_CLAMP, GL_CLAMP);
 
 }
 
@@ -168,7 +169,7 @@ void LightingScene::display()
     
     // smooth cylinder
 	glPushMatrix();
-        glTranslated(2.0, 0.0, 12.0);
+		glTranslated(2.0, 0.0, 12.0);
         glScaled(1.0, 8.0, 1.0);
         glRotated(-90, 1.0, 0.0, 0.0);
         // smooth
@@ -259,9 +260,17 @@ LightingScene::~LightingScene()
 	delete(light1);
 
 	delete(table);
+	delete(chair);
+	delete(cylinderA);
+	delete(cylinderB);
+
+	delete(lamp);
 	delete(wall);
 	delete(boardA);
 	delete(boardB);
 	delete(materialA);
 	delete(materialB);
+
+	delete(slidesAppearance);
+	delete(boardAppearance);
 }
