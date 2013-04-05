@@ -19,6 +19,7 @@ float light1_pos[4] = {10.5, 6.0, 1.0, 1.0};
 
 float light2_pos[4] = {10.5, 6.0, 5.0, 1.0};
 float light3_pos[4] = {4, 6.0, 5.0, 1.0};
+float light4_pos[4] = {0, 4, 7.5, 1.0};
 
 // Global ambient light (do not confuse with ambient component of individual lights)
 float globalAmbientLight[4]= {0.5, 0.5, 0.5, 1.0};
@@ -82,13 +83,13 @@ void LightingScene::init()
 	light0->setSpecular(yellow);
 
 	//light0->disable();
-	light0->enable();
+	//light0->enable();
 
 	light1 = new CGFlight(GL_LIGHT1, light1_pos);
 	light1->setAmbient(ambientNull);
 	
 	//light1->disable();
-	light1->enable();
+	//light1->enable();
 
 	light2 = new CGFlight(GL_LIGHT2, light2_pos);
 	light2->setAmbient(ambientNull);
@@ -97,7 +98,7 @@ void LightingScene::init()
 	light2->setKq(0.0);
 
 	//light2->disable();
-	light2->enable();
+	//light2->enable();
 
 	light3 = new CGFlight(GL_LIGHT3, light3_pos);
 	light3->setAmbient(ambientNull);
@@ -106,8 +107,14 @@ void LightingScene::init()
 	light3->setKq(1.0);
 
 	//light3->disable();
-	light3->enable();
-	
+	//light3->enable();
+	   
+    light4 = new CGFlight(GL_LIGHT4, light4_pos);
+    light4->setAmbient(ambientNull);
+    
+    //light4->enable();
+    //light4->disable();
+
 	// Uncomment below to enable normalization of lighting normal vectors
     glEnable (GL_NORMALIZE);
 
@@ -132,6 +139,8 @@ void LightingScene::init()
     boardAppearance->setTexture("board.png");
     boardB->setRatio(512.0 / 372.0);
     boardAppearance->setTextureWrap(GL_REPEAT, GL_CLAMP_TO_EDGE);
+    
+    windowAppearance = new CGFappearance("window.png", GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
 }
 
@@ -154,6 +163,7 @@ void LightingScene::display()
 	light1->draw();
 	light2->draw();
 	light3->draw();
+    //light4->draw();
 	
 	// Draw axis
 	axis.draw();
@@ -186,6 +196,14 @@ void LightingScene::display()
         cylinderB->draw();
 	glPopMatrix();
     
+    //PlaneWall
+	glPushMatrix();
+        glTranslated(7.5,4,0);
+        glRotated(90.0,1,0,0);
+        glScaled(15,0.2,8);
+        wall->draw();
+	glPopMatrix();
+    
 	//Floor
 	glPushMatrix();
 		glTranslated(7.5,0,7.5);
@@ -196,17 +214,13 @@ void LightingScene::display()
 	//LeftWall
 	glPushMatrix();
 		glTranslated(0,4,7.5);
+        glRotated(90.0,1,0,0);
 		glRotated(-90.0,0,0,1);
-		glScaled(8,0.2,15);
+        glScaled(15,0.2,8);
+        windowAppearance->apply();
+        wall->setWindow(true);
 		wall->draw();
-	glPopMatrix();
-
-	//PlaneWall
-	glPushMatrix();
-		glTranslated(7.5,4,0);
-		glRotated(90.0,1,0,0);
-		glScaled(15,0.2,8);
-		wall->draw();
+        wall->setWindow(false);
 	glPopMatrix();
 
 	// Board A
