@@ -22,7 +22,7 @@ float light3_pos[4] = {4, 6.0, 5.0, 1.0};
 float light4_pos[4] = {0, 4, 7.5, 1.0};
 
 // Global ambient light (do not confuse with ambient component of individual lights)
-float globalAmbientLight[4]= {0.5, 0.5, 0.5, 1.0};
+float globalAmbientLight[4]= {0.1, 0.1, 0.1, 1.0};
 
 // number of divisions
 #define BOARD_A_DIVISIONS 30
@@ -51,6 +51,12 @@ float ambBD[3] = {0.2, 0.2, 0.2};
 float difBD[3] = {0.6, 0.6, 0.6};
 float specBD[3] = {0.1, 0.1, 0.1};
 float shininessBD = 10.f;
+
+// Coefficients for Wood
+float ambW[3] = {0.3, 0.1, 0.0};
+float difW[3] = {0.35, 0.15, 0.0};
+float specW[3] = {0.05, 0.05, 0.05};
+float shininessW = 10.f;
 
 float ambientNull[4]={0,0,0,1};
 float yellow[4]={1,1,0,1};
@@ -122,6 +128,8 @@ void LightingScene::init()
 	table = new myTable();
 	chair = new myChair();
 	wall = new Plane();
+    window = new Plane(3, 3);
+    floor = new Plane(10, 12);
 	boardA = new Plane(BOARD_A_DIVISIONS);
 	boardB = new Plane(BOARD_B_DIVISIONS);
     cylinderA = new myCylinder(CYLINDER_SLICES, CYLINDER_STACKS, true);
@@ -142,9 +150,15 @@ void LightingScene::init()
     
     windowAppearance = new CGFappearance("window.png", GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
+    floorAppearance = new CGFappearance(ambW, difW, specW, shininessW);
+    floorAppearance->setTexture("floor.png");
+    //floorAppearance->setTextureWrap(GL_REPEAT, GL_REPEAT);
+    
+    window->setManyTexels(true);
+    floor->setManyTexels(true);
 }
 
-void LightingScene::display() 
+void LightingScene::display()
 {
 
 	// ---- BEGIN Background, camera and axis setup
@@ -208,7 +222,8 @@ void LightingScene::display()
 	glPushMatrix();
 		glTranslated(7.5,0,7.5);
 		glScaled(15,0.2,15);
-		wall->draw();
+        floorAppearance->apply();
+		floor->draw();
 	glPopMatrix();
 
 	//LeftWall
@@ -218,9 +233,7 @@ void LightingScene::display()
 		glRotated(-90.0,0,0,1);
         glScaled(15,0.2,8);
         windowAppearance->apply();
-        wall->setWindow(true);
-		wall->draw();
-        wall->setWindow(false);
+		window->draw();
 	glPopMatrix();
 
 	// Board A

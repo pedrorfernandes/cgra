@@ -24,6 +24,8 @@ public:
 	myTable* table;
 	myChair* chair;
 	Plane* wall;
+    Plane* window;
+    Plane* floor;
 	Plane* boardA;
 	Plane* boardB;
 	CGFappearance* materialA;
@@ -35,6 +37,7 @@ public:
     CGFappearance* slidesAppearance;
     CGFappearance* boardAppearance;
     CGFappearance* windowAppearance;
+    CGFappearance* floorAppearance;
 
 	~LightingScene();
 };

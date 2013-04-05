@@ -11,14 +11,16 @@ class Plane
 public:
 	Plane(void);
 	Plane(int);
+    Plane(int, int);
 	~Plane(void);
 	void draw();
-    void drawWindow();
+    void drawWithManyTexels();
     void setRatio(double);
-    void setWindow(bool);
+    void setManyTexels(bool);
 private:
-	double _numDivisions; // Number of triangles that constitute rows/columns
+	double _rows;
+    double _columns;
     double _ratio;
-    bool _isWindow;
+    bool _manyTexels;
 };
 
