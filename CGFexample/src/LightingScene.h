@@ -38,6 +38,9 @@ public:
     CGFappearance* boardAppearance;
     CGFappearance* windowAppearance;
     CGFappearance* floorAppearance;
+    CGFappearance* wallAppearance;
+    CGFappearance* columnAppearance;
+    CGFappearance* lampAppearance;
 
 	~LightingScene();
 };

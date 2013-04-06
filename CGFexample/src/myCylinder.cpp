@@ -50,6 +50,7 @@ void myCylinder::draw(){
                 glNormal3d(x.at(i), y.at(i), 0.0);
             else
                 glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
+            glTexCoord2d(0, 0);
             glVertex3d(x.at(i), y.at(i), z );
             
             // point B (bottom)
@@ -57,6 +58,7 @@ void myCylinder::draw(){
                 glNormal3d(x.at(i+1), y.at(i+1), 0.0);
             else
                 glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
+            glTexCoord2d(1, 0);
             glVertex3d(x.at(i+1), y.at(i+1), z);
             
             // point B' (top)
@@ -64,6 +66,7 @@ void myCylinder::draw(){
                 glNormal3d(x.at(i+1), y.at(i+1), 0.0);
             else
                 glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
+            glTexCoord2d(1, 1);
             glVertex3d(x.at(i+1), y.at(i+1), z+zStep );
             
             // point A' (top)
@@ -71,6 +74,7 @@ void myCylinder::draw(){
                 glNormal3d(x.at(i), y.at(i), 0.0);
             else
                 glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
+            glTexCoord2d(0, 1);
             glVertex3d(x.at(i), y.at(i), z+zStep );
             glEnd();
         }

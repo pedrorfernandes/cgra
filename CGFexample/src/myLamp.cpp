@@ -55,15 +55,19 @@ void myLamp::draw(){
         glBegin(GL_QUADS);
 
             glNormal3f( x4.at(i), y4.at(i), z4.at(i) );
+            glTexCoord2d(0, 0);
 			glVertex3f( x4.at(i), y4.at(i), z4.at(i) );
             
             glNormal3f( x1.at(i), y1.at(i), z1.at(i) );
+            glTexCoord2d(1, 0);
 			glVertex3f( x1.at(i), y1.at(i), z1.at(i) );
             
             glNormal3f( x2.at(i), y2.at(i), z2.at(i) );
+            glTexCoord2d(1, 1);
 			glVertex3f( x2.at(i), y2.at(i), z2.at(i) );
             
             glNormal3f( x3.at(i), y3.at(i), z3.at(i) );
+            glTexCoord2d(0, 1);
             glVertex3f( x3.at(i), y3.at(i), z3.at(i) );
         glEnd();
 

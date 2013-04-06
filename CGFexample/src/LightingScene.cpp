@@ -152,8 +152,12 @@ void LightingScene::init()
 
     floorAppearance = new CGFappearance(ambW, difW, specW, shininessW);
     floorAppearance->setTexture("floor.png");
-    //floorAppearance->setTextureWrap(GL_REPEAT, GL_REPEAT);
+    floorAppearance->setTextureWrap(GL_REPEAT, GL_REPEAT);
     
+    wallAppearance = new CGFappearance("wall.png", GL_REPEAT, GL_REPEAT);
+    columnAppearance = new CGFappearance("wall.png", GL_REPEAT, GL_REPEAT);
+    lampAppearance = new CGFappearance("wall.png", GL_REPEAT, GL_REPEAT);
+
     window->setManyTexels(true);
     floor->setManyTexels(true);
 }
@@ -189,6 +193,7 @@ void LightingScene::display()
 	glPushMatrix();
         glTranslated(7.5, 8.0, 7.5);
         glRotated(90, 1.0, 0.0, 0.0);
+        lampAppearance->apply();
         lamp->draw();
     glPopMatrix();
     
@@ -198,6 +203,7 @@ void LightingScene::display()
         glScaled(1.0, 8.0, 1.0);
         glRotated(-90, 1.0, 0.0, 0.0);
         // smooth
+        columnAppearance->apply();
         cylinderA->draw();
 	glPopMatrix();
     
@@ -207,6 +213,7 @@ void LightingScene::display()
         glScaled(1.0, 8.0, 1.0);
         glRotated(-90, 1.0, 0.0, 0.0);
         // not smooth
+        columnAppearance->apply();
         cylinderB->draw();
 	glPopMatrix();
     
@@ -215,6 +222,7 @@ void LightingScene::display()
         glTranslated(7.5,4,0);
         glRotated(90.0,1,0,0);
         glScaled(15,0.2,8);
+        wallAppearance->apply();
         wall->draw();
 	glPopMatrix();
     
@@ -286,6 +294,9 @@ LightingScene::~LightingScene()
 {
 	delete(light0);
 	delete(light1);
+    delete(light2);
+	delete(light3);
+    delete(light4);
 
 	delete(table);
 	delete(wall);
@@ -293,4 +304,19 @@ LightingScene::~LightingScene()
 	delete(boardB);
 	delete(materialA);
 	delete(materialB);
+    
+	delete chair;
+    delete window;
+    delete floor;
+    delete cylinderA;
+    delete cylinderB;
+    delete lamp;
+    
+    delete slidesAppearance;
+    delete boardAppearance;
+    delete windowAppearance;
+    delete floorAppearance;
+    delete wallAppearance;
+    delete columnAppearance;
+    delete lampAppearance;
 }

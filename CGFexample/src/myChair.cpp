@@ -15,6 +15,7 @@ void myChair::draw()
 	float shininessDM = 80.f;
 
 	materialW = new CGFappearance(ambW,difW,specW,shininessW);
+    materialW->setTexture("table.png");
 	materialDM = new CGFappearance(ambDM, difDM, specDM, shininessDM);
 
 	glPushMatrix();
