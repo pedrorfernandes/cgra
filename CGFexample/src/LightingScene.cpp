@@ -209,7 +209,7 @@ void LightingScene::display()
     
     // flat cylinder
     glPushMatrix();
-        glTranslated(7.0, 0.0, 12.0);
+        glTranslated(2.0, 0.0, 2.0);
         glScaled(1.0, 8.0, 1.0);
         glRotated(-90, 1.0, 0.0, 0.0);
         // not smooth
