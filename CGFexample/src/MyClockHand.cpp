@@ -6,14 +6,14 @@ MyClockHand::MyClockHand(int t): angle(270.0), type(t) {
     float specBlack[3] = {0, 0, 0};
     float shininessBlack = 120.f;
     
-    float ambRed[3] = {0, 0, 0};
-    float difRed[3] = {0, 0, 0};
-    float specRed[3] = {0, 0, 0};
+    float ambRed[3] = {1, 0, 0};
+    float difRed[3] = {1, 0, 0};
+    float specRed[3] = {1, 0, 0};
     float shininessRed = 120.f;
     
-    float ambWhite[3] = {0, 0, 0};
-    float difWhite[3] = {0, 0, 0};
-    float specWhite[3] = {0, 0, 0};
+    float ambWhite[3] = {1, 1, 1};
+    float difWhite[3] = {1, 1, 1};
+    float specWhite[3] = {1, 1, 1};
     float shininessWhite = 120.f;
     
     if (type == HOURS)
@@ -25,11 +25,15 @@ MyClockHand::MyClockHand(int t): angle(270.0), type(t) {
 
 }
 
+void MyClockHand::setAngle(float a){
+    angle = a;
+}
+
 void MyClockHand::draw() {
     glPushMatrix();
     glRotatef(180.0-angle, 0.0, 0.0, -1);
-    glScaled(0.1, 0.5, 0.1);
-    glTranslated(0, 0.5, 0);
+    glScaled(0.05, 0.4, 0.1);
+    glTranslated(0, 0.6, 0);
     clockHandAppearance->apply();
     cube.draw();
     glPopMatrix();

@@ -162,7 +162,12 @@ void LightingScene::init()
     floor->setManyTexels(true);
     
     clock = new MyClock();
-    clockHand = new MyClockHand(HOURS);
+    clockHandHours = new MyClockHand(HOURS);
+    clockHandHours->setAngle(90.0);
+    clockHandMinutes = new MyClockHand(MINUTES);
+    clockHandMinutes->setAngle(180.0);
+    clockHandSeconds = new MyClockHand(SECONDS);
+    clockHandSeconds->setAngle(270.0);
 }
 
 void LightingScene::display()
@@ -269,7 +274,9 @@ void LightingScene::display()
         glTranslated(7.25, 7.5, 0.2);
         glScaled(0.5, 0.5, 0.2);
         glRotated(180.0,1,0,0);
-        clockHand->draw();
+        clockHandHours->draw();
+        clockHandMinutes->draw();
+        clockHandSeconds->draw();
         clock->draw();
 	glPopMatrix();
 

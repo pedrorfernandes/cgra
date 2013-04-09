@@ -36,8 +36,10 @@ public:
     MyCylinder* cylinderB;
     MyLamp* lamp;
     MyClock* clock;
-    MyClockHand* clockHand;
-    
+    MyClockHand* clockHandHours;
+    MyClockHand* clockHandMinutes;
+    MyClockHand* clockHandSeconds;
+
     CGFappearance* slidesAppearance;
     CGFappearance* boardAppearance;
     CGFappearance* windowAppearance;
