@@ -170,6 +170,8 @@ void LightingScene::init()
     clockHandSeconds = new MyClockHand(SECONDS);
     clockHandSeconds->setAngle(270.0);
     
+    myPaperPlane = new MyPaperPlane();
+    
     setUpdatePeriod(UPDATE_INTERVAL);
 }
 

@@ -1,23 +1,29 @@
 #include "myChair.h"
 
-void MyChair::draw() 
-{
-	// Coefficients for Wood
+MyChair::MyChair(){
+    // Coefficients for Wood
 	float ambW[3] = {0.3, 0.1, 0.0};
 	float difW[3] = {0.35, 0.15, 0.0};
 	float specW[3] = {0.05, 0.05, 0.05};
 	float shininessW = 10.f;
-
+    
 	// Coefficients for Dark Metal Stuff
 	float ambDM[3] = {0.05, 0.05, 0.0};
 	float difDM[3] = {0.05, 0.05, 0.0};
 	float specDM[3] = {1.0, 1.0, 1.0};
 	float shininessDM = 80.f;
-
+    
 	materialW = new CGFappearance(ambW,difW,specW,shininessW);
     materialW->setTexture("table.png");
 	materialDM = new CGFappearance(ambDM, difDM, specDM, shininessDM);
+    
+    angle = rand() % 41 - 20;
+    magicNumberX = rand() % 10 / 10 - 0.5;
+    magicNumberZ = rand() % 10 / 10 - 0.5;
+}
 
+void MyChair::draw() 
+{
 	glPushMatrix();
 
 	glRotated(angle, 0, 1, 0);

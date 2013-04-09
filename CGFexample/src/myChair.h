@@ -34,11 +34,7 @@ private:
 	float magicNumberZ;
 
 	public:
-		MyChair() {
-			angle = rand() % 41 - 20;
-			magicNumberX = rand() % 10 / 10 - 0.5;
-			magicNumberZ = rand() % 10 / 10 - 0.5;
-		}
+    MyChair();
 		
 		void draw();
 };
