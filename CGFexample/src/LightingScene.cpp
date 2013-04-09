@@ -160,6 +160,8 @@ void LightingScene::init()
 
     window->setManyTexels(true);
     floor->setManyTexels(true);
+    
+    clock = new MyClock();
 }
 
 void LightingScene::display()
@@ -260,6 +262,13 @@ void LightingScene::display()
 		glRotated(90.0,1,0,0);
 		boardAppearance->apply();
 		boardB->draw();
+	glPopMatrix();
+    
+    glPushMatrix();
+        glTranslated(7.25, 7.5, 0.2);
+        glScaled(0.5, 0.5, 0.2);
+        glRotated(180.0,1,0,0);
+        clock->draw();
 	glPopMatrix();
 
 	//First Table

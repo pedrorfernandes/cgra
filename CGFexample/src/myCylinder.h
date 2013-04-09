@@ -23,9 +23,12 @@ class MyCylinder : public CGFobject {
     bool smooth;
     vector<double> notSmoothX;
     vector<double> notSmoothY;
+    bool textureAtBase;
 public:
     MyCylinder(int slices, int stacks, bool smooth);
     void draw();
+    void drawTextureAtBase();
+    void setTextureAtBase(bool);
     
 };
 

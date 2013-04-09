@@ -1,7 +1,7 @@
 #include "myCylinder.h"
 
 MyCylinder::MyCylinder(int slices, int stacks, bool smooth):
-slices(slices), stacks(stacks), smooth(smooth) {
+slices(slices), stacks(stacks), smooth(smooth), textureAtBase(false) {
     
     for(double angle = 0.0; angle <= 360.0; angle += (360.0 / slices)) {
         double rad = angle * PI / 180; // degrees to radians
@@ -21,12 +21,18 @@ slices(slices), stacks(stacks), smooth(smooth) {
     }
 }
 
+void MyCylinder::setTextureAtBase(bool b){
+    textureAtBase = b;
+}
+
 void MyCylinder::draw(){
+    
     
     // Bottom of the cylinder
     // Drawn clockwise
     glBegin(GL_POLYGON);
     for(int i = x.size()-1; i >= 0 ; i--) {
+        if (textureAtBase) glTexCoord2d((x.at(i)+1)/2, (y.at(i)+1)/2);
         glNormal3d(x.at(i), y.at(i), -1.0);
         glVertex3d( x.at(i), y.at(i), 0.0);
     }
@@ -50,7 +56,7 @@ void MyCylinder::draw(){
                 glNormal3d(x.at(i), y.at(i), 0.0);
             else
                 glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
-            glTexCoord2d(0, 0);
+            if (!textureAtBase) glTexCoord2d(0, 0);
             glVertex3d(x.at(i), y.at(i), z );
             
             // point B (bottom)
@@ -58,7 +64,7 @@ void MyCylinder::draw(){
                 glNormal3d(x.at(i+1), y.at(i+1), 0.0);
             else
                 glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
-            glTexCoord2d(1, 0);
+            if (!textureAtBase) glTexCoord2d(1, 0);
             glVertex3d(x.at(i+1), y.at(i+1), z);
             
             // point B' (top)
@@ -66,7 +72,7 @@ void MyCylinder::draw(){
                 glNormal3d(x.at(i+1), y.at(i+1), 0.0);
             else
                 glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
-            glTexCoord2d(1, 1);
+            if (!textureAtBase) glTexCoord2d(1, 1);
             glVertex3d(x.at(i+1), y.at(i+1), z+zStep );
             
             // point A' (top)
@@ -74,7 +80,7 @@ void MyCylinder::draw(){
                 glNormal3d(x.at(i), y.at(i), 0.0);
             else
                 glNormal3d(notSmoothX.at(i), notSmoothY.at(i), 0.0);
-            glTexCoord2d(0, 1);
+            if (!textureAtBase) glTexCoord2d(0, 1);
             glVertex3d(x.at(i), y.at(i), z+zStep );
             glEnd();
         }

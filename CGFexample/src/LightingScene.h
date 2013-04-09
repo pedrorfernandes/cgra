@@ -8,6 +8,7 @@
 #include "Plane.h"
 #include "myCylinder.h"
 #include "myLamp.h"
+#include "MyClock.h"
 
 class LightingScene : public CGFscene
 {
@@ -33,6 +34,7 @@ public:
     MyCylinder* cylinderA;
     MyCylinder* cylinderB;
     MyLamp* lamp;
+    MyClock* clock;
     
     CGFappearance* slidesAppearance;
     CGFappearance* boardAppearance;
