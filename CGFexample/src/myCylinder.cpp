@@ -31,8 +31,8 @@ void MyCylinder::draw(){
     // Bottom of the cylinder
     // Drawn clockwise
     glBegin(GL_POLYGON);
-    for(int i = x.size()-1; i >= 0 ; i--) {
-        if (textureAtBase) glTexCoord2d((x.at(i)+1)/2, (y.at(i)+1)/2);
+    for(int i = x.size()-1, t = 0; i >= 0 ; i--, t++) {
+        if (textureAtBase) glTexCoord2d((x.at(t)+1)/2, (y.at(t)+1)/2);
         glNormal3d(x.at(i), y.at(i), -1.0);
         glVertex3d( x.at(i), y.at(i), 0.0);
     }
