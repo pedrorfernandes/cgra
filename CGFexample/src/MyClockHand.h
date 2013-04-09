@@ -18,10 +18,12 @@ class MyClockHand : public CGFobject {
     MyUnitCube cube;
     CGFappearance * clockHandAppearance;
     int type;
+    double time;
 public:
     MyClockHand(int type);
     void draw();
     void setAngle(float);
+    void update(long miliseconds);
 };
 
 #endif

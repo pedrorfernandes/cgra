@@ -65,6 +65,7 @@ float yellow[4]={1,1,0,1};
 #define CYLINDER_SLICES 10
 #define CIRCLE_STACKS 5
 #define CIRCLE_SLICES 6
+#define UPDATE_INTERVAL 100
 
 void LightingScene::init() 
 {
@@ -168,6 +169,14 @@ void LightingScene::init()
     clockHandMinutes->setAngle(180.0);
     clockHandSeconds = new MyClockHand(SECONDS);
     clockHandSeconds->setAngle(270.0);
+    
+    setUpdatePeriod(UPDATE_INTERVAL);
+}
+
+void LightingScene::update(unsigned long miliseconds){
+    clockHandHours->update(UPDATE_INTERVAL);
+    clockHandMinutes->update(UPDATE_INTERVAL);
+    clockHandSeconds->update(UPDATE_INTERVAL);
 }
 
 void LightingScene::display()

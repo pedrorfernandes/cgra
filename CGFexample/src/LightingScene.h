@@ -47,6 +47,8 @@ public:
     CGFappearance* wallAppearance;
     CGFappearance* columnAppearance;
     CGFappearance* lampAppearance;
+    
+    void update(unsigned long miliseconds);
 
 	~LightingScene();
 };
