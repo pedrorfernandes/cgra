@@ -5,7 +5,7 @@
 #include "CGFappearance.h"
 #include "myUnitCube.h"
 
-class myTable: public CGFobject {
+class MyTable: public CGFobject {
     
 	CGFappearance* materialW;
 	CGFappearance* materialMB;
@@ -14,7 +14,7 @@ class myTable: public CGFobject {
 	CGFappearance* materialR;
     CGFappearance* tableAppearance;
 
-	myUnitCube myCube;
+	MyUnitCube myCube;
 
 	float angle;
 	float magicNumberX;
@@ -22,12 +22,12 @@ class myTable: public CGFobject {
 
 	public:
     void draw();
-    myTable();
+    MyTable();
 };
 
-class myFloor: public CGFobject {
+class MyFloor: public CGFobject {
 
-	myUnitCube myCube;
+	MyUnitCube myCube;
 
 	public:
 		void draw();

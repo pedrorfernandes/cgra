@@ -21,20 +21,20 @@
 #define CHAIR_BACK_HOLDER_Y 1.0
 #define CHAIR_BACK_HOLDER_Z 0.15
 
-class myChair: public CGFobject {
+class MyChair: public CGFobject {
 private:
 
 	CGFappearance* materialW;
 	CGFappearance* materialDM;
 
-	myUnitCube myCube;
+	MyUnitCube myCube;
 
 	float angle;
 	float magicNumberX;
 	float magicNumberZ;
 
 	public:
-		myChair() {
+		MyChair() {
 			angle = rand() % 41 - 20;
 			magicNumberX = rand() % 10 / 10 - 0.5;
 			magicNumberZ = rand() % 10 / 10 - 0.5;

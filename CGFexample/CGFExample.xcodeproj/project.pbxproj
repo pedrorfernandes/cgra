@@ -86,6 +86,7 @@
 		EB564CA116E8F5E600A7D1E7 /* myUnitCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myUnitCube.h; path = src/myUnitCube.h; sourceTree = SOURCE_ROOT; };
 		EB564CA216E8F5E600A7D1E7 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Plane.cpp; path = src/Plane.cpp; sourceTree = SOURCE_ROOT; };
 		EB564CA316E8F5E600A7D1E7 /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plane.h; path = src/Plane.h; sourceTree = SOURCE_ROOT; };
+		EB6E232917141789005A0463 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		EBC2B42B16F8D6DF00E3EB66 /* myLamp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myLamp.cpp; path = src/myLamp.cpp; sourceTree = SOURCE_ROOT; };
 		EBC2B42C16F8D6DF00E3EB66 /* myLamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myLamp.h; path = src/myLamp.h; sourceTree = SOURCE_ROOT; };
 		EBD2B46F16EF7799008A2DD0 /* myCylinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myCylinder.cpp; path = src/myCylinder.cpp; sourceTree = SOURCE_ROOT; };
@@ -200,6 +201,7 @@
 		EB40082A170B37AF00A5888C /* TP4-textures */ = {
 			isa = PBXGroup;
 			children = (
+				EB6E232917141789005A0463 /* clock.png */,
 				EB40082B170B37AF00A5888C /* board.png */,
 				EB40082C170B37AF00A5888C /* floor.png */,
 				EB40082D170B37AF00A5888C /* slides.png */,

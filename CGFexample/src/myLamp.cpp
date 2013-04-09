@@ -1,6 +1,6 @@
 #include "myLamp.h"
 
-myLamp::myLamp(int slices, int stacks): slices(slices), stacks(stacks){
+MyLamp::MyLamp(int slices, int stacks): slices(slices), stacks(stacks){
     deltaTheta = (2.0 * PI / slices);
     deltaPhi = (PI / 2 / stacks);
     
@@ -39,7 +39,7 @@ myLamp::myLamp(int slices, int stacks): slices(slices), stacks(stacks){
 	}
 }
 
-void myLamp::draw(){
+void MyLamp::draw(){
     
     // the base
     glBegin(GL_POLYGON);

@@ -1,6 +1,6 @@
 #include "myTable.h"
 
-myTable::myTable() {
+MyTable::MyTable() {
     // Coefficients for Wood
     float ambW[3] = {0.3, 0.1, 0.0};
     float difW[3] = {0.35, 0.15, 0.0};
@@ -44,7 +44,7 @@ myTable::myTable() {
     tableAppearance->setTexture("table.png");
 }
 
-void myTable::draw()
+void MyTable::draw()
 {
 	glPushMatrix();
 	glRotated(angle, 0, 1, 0);
@@ -93,7 +93,7 @@ void myTable::draw()
 	glPopMatrix();
 }
 
-void myFloor::draw() {
+void MyFloor::draw() {
 
 	//Floor
 	glPushMatrix();

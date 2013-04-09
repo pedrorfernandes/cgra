@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class myLamp : public CGFobject {
+class MyLamp : public CGFobject {
     int slices;
     int stacks;
     vector<float> x1, x2, x3, x4;
@@ -25,7 +25,7 @@ class myLamp : public CGFobject {
     vector<float> xBase;
     vector<float> yBase;
 public:
-    myLamp(int slices, int stacks);
+    MyLamp(int slices, int stacks);
     void draw();
     
 };

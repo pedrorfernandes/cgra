@@ -21,8 +21,8 @@ public:
 	CGFlight* light3;
     CGFlight* light4;
 
-	myTable* table;
-	myChair* chair;
+	MyTable* table;
+	MyChair* chair;
 	Plane* wall;
     Plane* window;
     Plane* floor;
@@ -30,9 +30,9 @@ public:
 	Plane* boardB;
 	CGFappearance* materialA;
 	CGFappearance* materialB;
-    myCylinder* cylinderA;
-    myCylinder* cylinderB;
-    myLamp* lamp;
+    MyCylinder* cylinderA;
+    MyCylinder* cylinderB;
+    MyLamp* lamp;
     
     CGFappearance* slidesAppearance;
     CGFappearance* boardAppearance;

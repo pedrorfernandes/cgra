@@ -125,16 +125,16 @@ void LightingScene::init()
     glEnable (GL_NORMALIZE);
 
 	//Declares scene elements
-	table = new myTable();
-	chair = new myChair();
+	table = new MyTable();
+	chair = new MyChair();
 	wall = new Plane();
     window = new Plane(3, 3);
     floor = new Plane(10, 12);
 	boardA = new Plane(BOARD_A_DIVISIONS);
 	boardB = new Plane(BOARD_B_DIVISIONS);
-    cylinderA = new myCylinder(CYLINDER_SLICES, CYLINDER_STACKS, true);
-    cylinderB = new myCylinder(CYLINDER_SLICES, CYLINDER_STACKS, false);
-    lamp = new myLamp(CIRCLE_SLICES, CIRCLE_STACKS);
+    cylinderA = new MyCylinder(CYLINDER_SLICES, CYLINDER_STACKS, true);
+    cylinderB = new MyCylinder(CYLINDER_SLICES, CYLINDER_STACKS, false);
+    lamp = new MyLamp(CIRCLE_SLICES, CIRCLE_STACKS);
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);

@@ -1,9 +1,9 @@
-#ifndef MYUNITCUBE_H
-#define MYUNITCUBE_H
+#ifndef myUnitCube_H
+#define myUnitCube_H
 
 #include "CGFobject.h"
 
-class myUnitCube: public CGFobject {
+class MyUnitCube: public CGFobject {
 	public:
 		void draw();
 };

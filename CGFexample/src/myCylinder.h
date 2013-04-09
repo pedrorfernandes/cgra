@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class myCylinder : public CGFobject {
+class MyCylinder : public CGFobject {
     int slices;
     int stacks;
     vector<double> x;
@@ -24,7 +24,7 @@ class myCylinder : public CGFobject {
     vector<double> notSmoothX;
     vector<double> notSmoothY;
 public:
-    myCylinder(int slices, int stacks, bool smooth);
+    MyCylinder(int slices, int stacks, bool smooth);
     void draw();
     
 };

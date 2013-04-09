@@ -1,6 +1,6 @@
 #include "myCylinder.h"
 
-myCylinder::myCylinder(int slices, int stacks, bool smooth):
+MyCylinder::MyCylinder(int slices, int stacks, bool smooth):
 slices(slices), stacks(stacks), smooth(smooth) {
     
     for(double angle = 0.0; angle <= 360.0; angle += (360.0 / slices)) {
@@ -21,7 +21,7 @@ slices(slices), stacks(stacks), smooth(smooth) {
     }
 }
 
-void myCylinder::draw(){
+void MyCylinder::draw(){
     
     // Bottom of the cylinder
     // Drawn clockwise

@@ -1,6 +1,6 @@
 #include "myUnitCube.h"
 
-void myUnitCube::draw() 
+void MyUnitCube::draw() 
 {
 	//FRONT
 	glPushMatrix();

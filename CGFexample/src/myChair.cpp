@@ -1,6 +1,6 @@
 #include "myChair.h"
 
-void myChair::draw() 
+void MyChair::draw() 
 {
 	// Coefficients for Wood
 	float ambW[3] = {0.3, 0.1, 0.0};
