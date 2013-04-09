@@ -9,6 +9,7 @@
 #include "myCylinder.h"
 #include "myLamp.h"
 #include "MyClock.h"
+#include "MyClockHand.h"
 
 class LightingScene : public CGFscene
 {
@@ -35,6 +36,7 @@ public:
     MyCylinder* cylinderB;
     MyLamp* lamp;
     MyClock* clock;
+    MyClockHand* clockHand;
     
     CGFappearance* slidesAppearance;
     CGFappearance* boardAppearance;
