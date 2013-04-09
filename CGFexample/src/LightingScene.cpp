@@ -170,7 +170,13 @@ void LightingScene::init()
     clockHandSeconds = new MyClockHand(SECONDS);
     clockHandSeconds->setAngle(270.0);
     
-    myPaperPlane = new MyPaperPlane();
+    vector<float> xCoordsPlane, yCoordsPlane, zCoordsPlane;
+    xCoordsPlane.push_back(14); yCoordsPlane.push_back(4); zCoordsPlane.push_back(8);
+    xCoordsPlane.push_back(11); yCoordsPlane.push_back(4); zCoordsPlane.push_back(8);
+    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(10); zCoordsPlane.push_back(8);
+    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(0.5); zCoordsPlane.push_back(8);
+    
+    myPaperPlane = new MyPaperPlane(xCoordsPlane, yCoordsPlane, zCoordsPlane);
     
     setUpdatePeriod(UPDATE_INTERVAL);
 }
@@ -179,6 +185,7 @@ void LightingScene::update(unsigned long miliseconds){
     clockHandHours->update(UPDATE_INTERVAL);
     clockHandMinutes->update(UPDATE_INTERVAL);
     clockHandSeconds->update(UPDATE_INTERVAL);
+    myPaperPlane->update(UPDATE_INTERVAL);
 }
 
 void LightingScene::display()
@@ -208,6 +215,8 @@ void LightingScene::display()
 	// ---- END Background, camera and axis setup
 
 	// ---- BEGIN Primitive drawing section
+    
+    myPaperPlane->draw();
     
 	glPushMatrix();
         glTranslated(7.5, 8.0, 7.5);

@@ -47,8 +47,8 @@ MyTable::MyTable() {
 void MyTable::draw()
 {
 	glPushMatrix();
-	glRotated(angle, 0, 1, 0);
-	glTranslated(magicNumberX, 0, magicNumberZ);
+	//glRotated(angle, 0, 1, 0);
+	//glTranslated(magicNumberX, 0, magicNumberZ);
 
 	//Table Top
 	glPushMatrix();
