@@ -14,7 +14,7 @@
 #define FALLING 3
 #define STOP 4
 
-#define SPEED 4
+#define SPEED 5.0
 
 class MyPaperPlane : public CGFobject {
     CGFappearance * paperPlaneAppearance;
@@ -26,6 +26,13 @@ class MyPaperPlane : public CGFobject {
     float x, y, z;
     double time;
     float angle;
+    float rotationInterval;
+    vector<float> xTriangle1;
+    vector<float> yTriangle1;
+    vector<float> zTriangle1;
+    vector<float> xTriangle2;
+    vector<float> yTriangle2;
+    vector<float> zTriangle2;
 public:
     MyPaperPlane(vector<float> x, vector<float> y, vector<float> z);
     void draw();

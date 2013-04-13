@@ -178,8 +178,8 @@ void LightingScene::init()
     vector<float> xCoordsPlane, yCoordsPlane, zCoordsPlane;
     xCoordsPlane.push_back(14); yCoordsPlane.push_back(4); zCoordsPlane.push_back(8);
     xCoordsPlane.push_back(11); yCoordsPlane.push_back(4); zCoordsPlane.push_back(8);
-    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(10); zCoordsPlane.push_back(8);
-    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(0.5); zCoordsPlane.push_back(8);
+    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(4.85); zCoordsPlane.push_back(8);
+    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(0.2); zCoordsPlane.push_back(8);
     
     myPaperPlane = new MyPaperPlane(xCoordsPlane, yCoordsPlane, zCoordsPlane);
     
