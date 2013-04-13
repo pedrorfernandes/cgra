@@ -164,11 +164,16 @@ void LightingScene::init()
     
     clock = new MyClock();
     clockHandHours = new MyClockHand(HOURS);
-    clockHandHours->setAngle(90.0);
+    //clockHandHours->setAngle(90.0);
+    clockHandHours->setTime(3, 30, 45);
+    
     clockHandMinutes = new MyClockHand(MINUTES);
-    clockHandMinutes->setAngle(180.0);
+    //clockHandMinutes->setAngle(180.0);
+    clockHandMinutes->setTime(3, 30, 45);
+    
     clockHandSeconds = new MyClockHand(SECONDS);
-    clockHandSeconds->setAngle(270.0);
+    //clockHandSeconds->setAngle(270.0);
+    clockHandSeconds->setTime(3, 30, 45);
     
     vector<float> xCoordsPlane, yCoordsPlane, zCoordsPlane;
     xCoordsPlane.push_back(14); yCoordsPlane.push_back(4); zCoordsPlane.push_back(8);

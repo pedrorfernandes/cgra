@@ -24,6 +24,7 @@ public:
     void draw();
     void setAngle(float);
     void update(long miliseconds);
+    void setTime(int hours, int minutes, int seconds);
 };
 
 #endif

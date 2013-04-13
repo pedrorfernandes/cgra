@@ -1,6 +1,6 @@
 #include "MyClockHand.h"
 
-MyClockHand::MyClockHand(int t): angle(270.0), type(t), time(0.0) {
+MyClockHand::MyClockHand(int t): angle(0.0), type(t), time(0.0) {
     float ambBlack[3] = {0, 0, 0};
     float difBlack[3] = {0, 0, 0};
     float specBlack[3] = {0, 0, 0};
@@ -29,6 +29,35 @@ void MyClockHand::setAngle(float a){
     angle = a;
 }
 
+void MyClockHand::setTime(int hours, int minutes, int seconds){
+    double update;
+    switch (type) {
+        case SECONDS:
+            time = seconds;
+            update = 1.0;
+            break;
+        case MINUTES:
+            time = minutes*60.0 + seconds;
+            update = 60.0;
+            break;
+        case HOURS:
+            time = hours * 3600.0 + minutes * 60.0 + seconds;
+            // the handle ticks 5 times each hour
+            update = 3600.0 / 5.0;
+            break;
+        default:
+            break;
+    }
+    while (time >= update){
+        angle += 6.0;
+        time -= update;
+        if (angle >= 360.0)
+            angle -= 360.0;
+    }
+    setAngle(angle);
+}
+
+
 void MyClockHand::update(long miliseconds){
     time += (double) miliseconds / 1000.0;
     long update;
@@ -40,7 +69,8 @@ void MyClockHand::update(long miliseconds){
             update = 60.0;
             break;
         case HOURS:
-            update = 3600.0;
+            // the handle ticks 5 times each hour
+            update = 3600.0 / 5.0;
             break;
         default:
             break;
@@ -49,6 +79,8 @@ void MyClockHand::update(long miliseconds){
         angle += 6.0;
         setAngle(angle);
         time -= update;
+        if (angle >= 360.0)
+            angle -= 360.0;
     }
 }
 
