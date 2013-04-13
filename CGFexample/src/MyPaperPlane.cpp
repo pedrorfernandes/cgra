@@ -12,6 +12,7 @@ MyPaperPlane::MyPaperPlane(vector<float> xVector, vector<float> yVector, vector<
     paperPlaneAppearance = NULL;
     angle = 0.0;
     rotationInterval = 0.0;
+    distanceInterval = 0.01;
     
     xTriangle1.push_back(0.5); yTriangle1.push_back(0.0); zTriangle1.push_back(-0.5);
     xTriangle1.push_back(0.0); yTriangle1.push_back(0.0); zTriangle1.push_back(0.5);
@@ -56,21 +57,21 @@ void MyPaperPlane::draw() {
 void MyPaperPlane::update(long miliseconds){
     switch (state) {
         case TAKEOFF:
-            x -= 0.05*SPEED;
+            x -= distanceInterval*SPEED;
             if (x <= xPoints.at(1) )
                 state = FLYING;
             break;
         case FLYING:
-            x -= 0.05*SPEED;
-            y += 0.02;
+            x -= distanceInterval*SPEED;
+            y += distanceInterval/2.0;
             if (x <= xPoints.at(2) || y >= yPoints.at(2)){
                 state = FALLING;
             }
             break;
         case FALLING:
-            y -= 0.05*SPEED;
+            y -= distanceInterval*SPEED;
             if (rotationInterval == 0.0)
-                rotationInterval = 180.0 / ( (yPoints.at(2) - yPoints.at(3) ) / (0.05*SPEED) );
+                rotationInterval = 180.0 / ( (yPoints.at(2) - yPoints.at(3) ) / (distanceInterval*SPEED) );
             angle += rotationInterval;
             if (y <= yPoints.at(3))
                 state = STOP;

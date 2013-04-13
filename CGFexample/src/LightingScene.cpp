@@ -65,7 +65,7 @@ float yellow[4]={1,1,0,1};
 #define CYLINDER_SLICES 10
 #define CIRCLE_STACKS 5
 #define CIRCLE_SLICES 6
-#define UPDATE_INTERVAL 100
+#define UPDATE_INTERVAL 16
 
 void LightingScene::init() 
 {
@@ -164,22 +164,19 @@ void LightingScene::init()
     
     clock = new MyClock();
     clockHandHours = new MyClockHand(HOURS);
-    //clockHandHours->setAngle(90.0);
     clockHandHours->setTime(3, 30, 45);
     
     clockHandMinutes = new MyClockHand(MINUTES);
-    //clockHandMinutes->setAngle(180.0);
     clockHandMinutes->setTime(3, 30, 45);
     
     clockHandSeconds = new MyClockHand(SECONDS);
-    //clockHandSeconds->setAngle(270.0);
     clockHandSeconds->setTime(3, 30, 45);
     
     vector<float> xCoordsPlane, yCoordsPlane, zCoordsPlane;
-    xCoordsPlane.push_back(14); yCoordsPlane.push_back(4); zCoordsPlane.push_back(8);
+    xCoordsPlane.push_back(14); yCoordsPlane.push_back(4.2); zCoordsPlane.push_back(8);
     xCoordsPlane.push_back(11); yCoordsPlane.push_back(4); zCoordsPlane.push_back(8);
-    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(4.85); zCoordsPlane.push_back(8);
-    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(0.2); zCoordsPlane.push_back(8);
+    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(5.25); zCoordsPlane.push_back(8);
+    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(0.1); zCoordsPlane.push_back(8);
     
     myPaperPlane = new MyPaperPlane(xCoordsPlane, yCoordsPlane, zCoordsPlane);
     

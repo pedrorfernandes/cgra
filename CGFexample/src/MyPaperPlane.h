@@ -27,6 +27,7 @@ class MyPaperPlane : public CGFobject {
     double time;
     float angle;
     float rotationInterval;
+    float distanceInterval;
     vector<float> xTriangle1;
     vector<float> yTriangle1;
     vector<float> zTriangle1;
