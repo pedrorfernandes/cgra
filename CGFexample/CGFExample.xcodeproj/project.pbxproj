@@ -27,6 +27,7 @@
 		EB564CAA16E8F5E600A7D1E7 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564CA216E8F5E600A7D1E7 /* Plane.cpp */; };
 		EB6E232F17141881005A0463 /* MyClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB6E232D17141881005A0463 /* MyClock.cpp */; };
 		EBA8BE59171DA90C00995B4E /* TPinterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBA8BE57171DA90C00995B4E /* TPinterface.cpp */; };
+		EBA8BE5C171DB2F800995B4E /* MyRobot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBA8BE5A171DB2F800995B4E /* MyRobot.cpp */; };
 		EBC2B42D16F8D6DF00E3EB66 /* myLamp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC2B42B16F8D6DF00E3EB66 /* myLamp.cpp */; };
 		EBD2B47116EF7799008A2DD0 /* myCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD2B46F16EF7799008A2DD0 /* myCylinder.cpp */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,8 @@
 		EB6E232E17141881005A0463 /* MyClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyClock.h; path = src/MyClock.h; sourceTree = SOURCE_ROOT; };
 		EBA8BE57171DA90C00995B4E /* TPinterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TPinterface.cpp; path = src/TPinterface.cpp; sourceTree = SOURCE_ROOT; };
 		EBA8BE58171DA90C00995B4E /* TPinterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPinterface.h; path = src/TPinterface.h; sourceTree = SOURCE_ROOT; };
+		EBA8BE5A171DB2F800995B4E /* MyRobot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyRobot.cpp; sourceTree = SOURCE_ROOT; };
+		EBA8BE5B171DB2F800995B4E /* MyRobot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRobot.h; sourceTree = SOURCE_ROOT; };
 		EBC2B42B16F8D6DF00E3EB66 /* myLamp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myLamp.cpp; path = src/myLamp.cpp; sourceTree = SOURCE_ROOT; };
 		EBC2B42C16F8D6DF00E3EB66 /* myLamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myLamp.h; path = src/myLamp.h; sourceTree = SOURCE_ROOT; };
 		EBD2B46F16EF7799008A2DD0 /* myCylinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myCylinder.cpp; path = src/myCylinder.cpp; sourceTree = SOURCE_ROOT; };
@@ -170,6 +173,8 @@
 				EB01ECA817146EB3009E1716 /* MyClockHand.h */,
 				EB01ECAA171483C2009E1716 /* MyPaperPlane.cpp */,
 				EB01ECAB171483C2009E1716 /* MyPaperPlane.h */,
+				EBA8BE5A171DB2F800995B4E /* MyRobot.cpp */,
+				EBA8BE5B171DB2F800995B4E /* MyRobot.h */,
 			);
 			path = CGFExample;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				EB01ECA917146EB3009E1716 /* MyClockHand.cpp in Sources */,
 				EB01ECAC171483C2009E1716 /* MyPaperPlane.cpp in Sources */,
 				EBA8BE59171DA90C00995B4E /* TPinterface.cpp in Sources */,
+				EBA8BE5C171DB2F800995B4E /* MyRobot.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

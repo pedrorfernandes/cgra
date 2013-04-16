@@ -183,6 +183,8 @@ void LightingScene::init()
     myPaperPlane = new MyPaperPlane(xCoordsPlane, yCoordsPlane, zCoordsPlane);
     
     setUpdatePeriod(UPDATE_INTERVAL);
+    
+    myBot = new MyRobot();
 }
 
 void LightingScene::update(unsigned long miliseconds){
@@ -221,6 +223,12 @@ void LightingScene::display()
 	// ---- BEGIN Primitive drawing section
     
     myPaperPlane->draw();
+    
+    glPushMatrix();
+    glTranslated(7.5, 0, 7.5);
+    glRotated(150, 0.0, -1, 0.0);
+    myBot->draw();
+    glPopMatrix();
     
 	glPushMatrix();
         glTranslated(7.5, 8.0, 7.5);

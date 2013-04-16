@@ -11,6 +11,7 @@
 #include "MyClock.h"
 #include "MyClockHand.h"
 #include "MyPaperPlane.h"
+#include "MyRobot.h"
 
 class LightingScene : public CGFscene
 {
@@ -41,6 +42,7 @@ public:
     MyClockHand* clockHandMinutes;
     MyClockHand* clockHandSeconds;
     MyPaperPlane* myPaperPlane;
+    MyRobot * myBot;
 
     CGFappearance* slidesAppearance;
     CGFappearance* boardAppearance;
