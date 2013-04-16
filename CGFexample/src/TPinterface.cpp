@@ -1,12 +1,13 @@
 #include "TPinterface.h"
 #include "LightingScene.h"
 
+/*
 TPinterface::TPinterface()
 {
 	testVar=0;
 }
 
-/*
+
 void TPinterface::processKeyboard(unsigned char key, int x, int y)
 {
 	// Uncomment below if you would like to process the default keys (e.g. 's' for snapshot, 'Esc' for exiting, ...)
