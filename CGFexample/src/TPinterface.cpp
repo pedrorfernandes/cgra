@@ -1,7 +1,7 @@
 #include "TPinterface.h"
 #include "LightingScene.h"
 
-/*
+
 TPinterface::TPinterface()
 {
 	testVar=0;
@@ -38,7 +38,7 @@ void TPinterface::initGUI()
 
 void TPinterface::processGUI(GLUI_Control *ctrl)
 {
-	printf ("GUI control id: %d\n  ",ctrl->user_id);
+	printf ("GUI control id: %ld\n  ",ctrl->user_id);
 	switch (ctrl->user_id)
 	{
 		case 1:
@@ -54,5 +54,5 @@ void TPinterface::processGUI(GLUI_Control *ctrl)
 		};
 	};
 }
- */
+ 
 

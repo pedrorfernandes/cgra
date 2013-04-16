@@ -69,6 +69,8 @@ float yellow[4]={1,1,0,1};
 
 void LightingScene::init() 
 {
+    sceneVar = 0;
+    
 	srand((time(NULL)));
 
 	// Enables lighting computations
@@ -308,6 +310,7 @@ void LightingScene::display()
 		table->draw();
 	glPopMatrix();
 
+    /*
 	//Second Table
 	glPushMatrix();
 		glTranslated(12,0,8);
@@ -319,7 +322,7 @@ void LightingScene::display()
 		glTranslated(12, 0, 4);
 		chair->draw();
 	glPopMatrix();
-     
+     */
 	
 	// ---- END Primitive drawing section
 	
@@ -330,7 +333,11 @@ void LightingScene::display()
 	glutSwapBuffers();
 }
 
-LightingScene::~LightingScene() 
+void LightingScene::toggleSomething(){
+    return;
+}
+
+LightingScene::~LightingScene()
 {
 	delete(light0);
 	delete(light1);

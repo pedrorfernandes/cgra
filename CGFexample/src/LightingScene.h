@@ -50,6 +50,10 @@ public:
     CGFappearance* columnAppearance;
     CGFappearance* lampAppearance;
     
+    void toggleSomething();
+    
+    int sceneVar;
+    
     void update(unsigned long miliseconds);
 
 	~LightingScene();
