@@ -11,17 +11,33 @@ TPinterface::TPinterface()
 void TPinterface::processKeyboard(unsigned char key, int x, int y)
 {
 	// Uncomment below if you would like to process the default keys (e.g. 's' for snapshot, 'Esc' for exiting, ...)
-	// CGFinterface::processKeyboard(key, x, y);
+    //CGFinterface::processKeyboard(key, x, y);
 
 	switch(key)
 	{
-		case 'a':
+		case 'j':
 		{
-			// This is an example of accessing the associated scene
-			// To test, create the function toggleSomething in your scene to activate/deactivate something
-			((LightingScene *) scene)->toggleSomething();
+			((LightingScene *) scene)->myBot->rotateLeft();
 			break;
 		}
+        
+        case 'l':
+        {
+            ((LightingScene *) scene)->myBot->rotateRight();
+			break;
+        }
+            
+        case 'i':
+        {
+            ((LightingScene *) scene)->myBot->moveForward();
+			break;
+        }
+            
+        case 'k':
+        {
+            ((LightingScene *) scene)->myBot->moveBackward();
+			break;
+        }
 	}
 }
 

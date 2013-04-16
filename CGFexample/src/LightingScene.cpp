@@ -65,7 +65,7 @@ float yellow[4]={1,1,0,1};
 #define CYLINDER_SLICES 10
 #define CIRCLE_STACKS 5
 #define CIRCLE_SLICES 6
-#define UPDATE_INTERVAL 16
+#define UPDATE_INTERVAL 500
 
 void LightingScene::init() 
 {
