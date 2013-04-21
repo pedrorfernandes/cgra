@@ -15,29 +15,7 @@ void TPinterface::processKeyboard(unsigned char key, int x, int y)
 
 	switch(key)
 	{
-		case 'j':
-		{
-			((LightingScene *) scene)->myBot->rotateLeft();
-			break;
-		}
-        
-        case 'l':
-        {
-            ((LightingScene *) scene)->myBot->rotateRight();
-			break;
-        }
             
-        case 'i':
-        {
-            ((LightingScene *) scene)->myBot->moveForward();
-			break;
-        }
-            
-        case 'k':
-        {
-            ((LightingScene *) scene)->myBot->moveBackward();
-			break;
-        }
 	}
 }
 

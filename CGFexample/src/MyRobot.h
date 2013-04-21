@@ -29,10 +29,6 @@ public:
     MyRobot();
     void draw();
     void update(long miliseconds);
-    void moveForward();
-    void moveBackward();
-    void rotateLeft();
-    void rotateRight();
 };
 
 
