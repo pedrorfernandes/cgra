@@ -55,9 +55,7 @@ public:
     void toggleSomething();
     
     int sceneVar;
-    
-    int switchLight(int lightNumber);
-    
+        
     void update(unsigned long miliseconds);
 
 	~LightingScene();

@@ -348,11 +348,6 @@ void LightingScene::toggleSomething(){
     return;
 }
 
-int switchLight(int lightNumber){
-    printf("oh hi there");
-    return 0;
-}
-
 LightingScene::~LightingScene()
 {
 	delete(light0);
