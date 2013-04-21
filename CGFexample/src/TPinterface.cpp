@@ -12,7 +12,7 @@ void TPinterface::processKeyboard(unsigned char key, int x, int y)
 {
 	// Uncomment below if you would like to process the default keys (e.g. 's' for snapshot, 'Esc' for exiting, ...)
     //CGFinterface::processKeyboard(key, x, y);
-
+    
 	switch(key)
 	{
 		case 'j':
@@ -20,7 +20,7 @@ void TPinterface::processKeyboard(unsigned char key, int x, int y)
 			((LightingScene *) scene)->myBot->rotateLeft();
 			break;
 		}
-        
+            
         case 'l':
         {
             ((LightingScene *) scene)->myBot->rotateRight();
@@ -57,7 +57,8 @@ void TPinterface::initGUI()
     addCheckboxToPanel(lightsPanel, (char*)"Luz 3", &(((LightingScene*) scene)->light2On), 2);
     addCheckboxToPanel(lightsPanel, (char*)"Luz 4", &(((LightingScene*) scene)->light3On), 3);
     addCheckboxToPanel(lightsPanel, (char*)"Luz 5", &(((LightingScene*) scene)->light4On), 4);
-
+    
+    addButton((char*)"Parar/continuar relogio", 5);
 }
 
 void TPinterface::processGUI(GLUI_Control *ctrl)
@@ -111,8 +112,13 @@ void TPinterface::processGUI(GLUI_Control *ctrl)
             }
             break;
         }
+        case 5:
+        {
+            ((LightingScene*) scene)->clockStop = !((LightingScene*) scene)->clockStop;
+            break;
+        }
             
 	};
 }
- 
+
 

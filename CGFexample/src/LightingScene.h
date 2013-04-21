@@ -54,7 +54,7 @@ public:
     
     void toggleSomething();
     
-    int sceneVar;
+    int clockStop;
         
     void update(unsigned long miliseconds);
 

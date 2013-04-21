@@ -72,8 +72,6 @@ float yellow[4]={1,1,0,1};
 
 void LightingScene::init() 
 {
-    sceneVar = 0;
-    
 	srand((time(NULL)));
 
 	// Enables lighting computations
@@ -188,12 +186,16 @@ void LightingScene::init()
     setUpdatePeriod(UPDATE_INTERVAL);
     
     myBot = new MyRobot();
+    
+    clockStop = 0;
 }
 
 void LightingScene::update(unsigned long miliseconds){
-    clockHandHours->update(UPDATE_INTERVAL);
-    clockHandMinutes->update(UPDATE_INTERVAL);
-    clockHandSeconds->update(UPDATE_INTERVAL);
+    if (!clockStop){
+        clockHandHours->update(UPDATE_INTERVAL);
+        clockHandMinutes->update(UPDATE_INTERVAL);
+        clockHandSeconds->update(UPDATE_INTERVAL);
+    }
     myPaperPlane->update(UPDATE_INTERVAL);
 }
 
