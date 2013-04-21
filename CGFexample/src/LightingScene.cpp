@@ -25,8 +25,8 @@ float light4_pos[4] = {0, 4, 7.5, 1.0};
 float globalAmbientLight[4]= {0.1, 0.1, 0.1, 1.0};
 
 // number of divisions
-#define BOARD_A_DIVISIONS 30
-#define BOARD_B_DIVISIONS 100
+#define BOARD_A_DIVISIONS 5 // 30 this is wasting LOTS of cpu
+#define BOARD_B_DIVISIONS 10 // 100
 
 // Coefficients for material A
 float ambA[3] = {0.2, 0.2, 0.2};
@@ -65,7 +65,7 @@ float yellow[4]={1,1,0,1};
 #define CYLINDER_SLICES 10
 #define CIRCLE_STACKS 5
 #define CIRCLE_SLICES 6
-#define UPDATE_INTERVAL 500
+#define UPDATE_INTERVAL 16
 
 void LightingScene::init() 
 {
