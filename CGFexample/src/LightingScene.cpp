@@ -95,13 +95,13 @@ void LightingScene::init()
 	light0->setSpecular(yellow);
 
 	//light0->disable();
-	//light0->enable();
+	light0->enable(); light0On = 1;
 
 	light1 = new CGFlight(GL_LIGHT1, light1_pos);
 	light1->setAmbient(ambientNull);
 	
 	//light1->disable();
-	//light1->enable();
+	light1->enable(); light1On = 1;
 
 	light2 = new CGFlight(GL_LIGHT2, light2_pos);
 	light2->setAmbient(ambientNull);
@@ -110,7 +110,7 @@ void LightingScene::init()
 	light2->setKq(0.0);
 
 	//light2->disable();
-	//light2->enable();
+	light2->enable(); light2On = 1;
 
 	light3 = new CGFlight(GL_LIGHT3, light3_pos);
 	light3->setAmbient(ambientNull);
@@ -119,12 +119,12 @@ void LightingScene::init()
 	light3->setKq(1.0);
 
 	//light3->disable();
-	//light3->enable();
+	light3->enable(); light3On = 1;
 	   
     light4 = new CGFlight(GL_LIGHT4, light4_pos);
     light4->setAmbient(ambientNull);
     
-    //light4->enable();
+    light4->enable(); light4On = 1;
     //light4->disable();
 
 	// Uncomment below to enable normalization of lighting normal vectors
@@ -216,7 +216,7 @@ void LightingScene::display()
 	light1->draw();
 	light2->draw();
 	light3->draw();
-    //light4->draw();
+    light4->update();
 	
 	// Draw axis
 	axis.draw();
@@ -346,6 +346,11 @@ void LightingScene::display()
 
 void LightingScene::toggleSomething(){
     return;
+}
+
+int switchLight(int lightNumber){
+    printf("oh hi there");
+    return 0;
 }
 
 LightingScene::~LightingScene()

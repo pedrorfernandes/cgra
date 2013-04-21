@@ -19,11 +19,11 @@ public:
 	void init();
 	void display();
 
-	CGFlight* light0;
-	CGFlight* light1;
-	CGFlight* light2;
-	CGFlight* light3;
-    CGFlight* light4;
+	CGFlight* light0; int light0On;
+	CGFlight* light1; int light1On;
+	CGFlight* light2; int light2On;
+	CGFlight* light3; int light3On;
+    CGFlight* light4; int light4On;
 
 	MyTable* table;
 	MyChair* chair;
@@ -55,6 +55,8 @@ public:
     void toggleSomething();
     
     int sceneVar;
+    
+    int switchLight(int lightNumber);
     
     void update(unsigned long miliseconds);
 
