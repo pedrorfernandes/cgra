@@ -314,7 +314,7 @@ void LightingScene::display()
 
 	//First Table
 	glPushMatrix();
-		glTranslated(5,0,8);
+		glTranslated(4,0,8);
 		table->draw();
 	glPopMatrix();
 
