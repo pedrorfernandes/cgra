@@ -3,7 +3,9 @@
 #include "CGFapplication.h"
 #include "myTable.h"
 #include "Plane.h"
+#ifndef __APPLE__
 #include "GL/glext.h"
+#endif
 
 #include <math.h>
 #include <time.h>
