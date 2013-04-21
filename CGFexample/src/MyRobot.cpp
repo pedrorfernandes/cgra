@@ -38,3 +38,21 @@ void MyRobot::draw(){
 void MyRobot::update(long miliseconds){
     
 }
+
+void MyRobot::moveForward(){
+    x -= speed * cos((startingAngle-angle)*deg2rad);
+	z += speed * sin((startingAngle+angle)*deg2rad);
+}
+
+void MyRobot::moveBackward(){
+    x += speed * cos((startingAngle-angle)*deg2rad);
+	z -= speed * sin((startingAngle+angle)*deg2rad);
+}
+
+void MyRobot::rotateLeft(){
+    angle -= rotationSpeed;
+}
+
+void MyRobot::rotateRight(){
+    angle += rotationSpeed;
+}
