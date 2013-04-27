@@ -231,7 +231,7 @@ void LightingScene::display()
     
     glPushMatrix();
     glTranslated(7.5, 0, 7.5);
-    //glRotated(150, 0.0, -1, 0.0);
+    glRotated(150, 0.0, -1, 0.0);
     myBot->draw();
     glPopMatrix();
     

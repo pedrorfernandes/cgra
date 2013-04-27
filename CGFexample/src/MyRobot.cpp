@@ -42,7 +42,7 @@ MyRobot::MyRobot(int stacks){
         Point Q(top.at(i).x, top.at(i).y, top.at(i).z);
         Point delta(Q.x - P.x, Q.y - P.y, Q.z - P.z);
         for(float t = 0.0; t < 1.0; t += (1.0/(float)stacks)){
-            // line -> P + Q*t
+            // line -> P + (Q-P)*t
             side.push_back(Point(P.x + delta.x * t,
                                  P.y + delta.y * t,
                                  P.z + delta.z * t));
@@ -82,7 +82,7 @@ void MyRobot::draw(){
         glVertex3d(base.at(i).x, base.at(i).y, base.at(i).z);
     }
     glEnd();
-
+    
     int i;
     for(i = 0; i < side.size()-1-deltaSide; i++){
         glBegin(GL_TRIANGLE_STRIP);

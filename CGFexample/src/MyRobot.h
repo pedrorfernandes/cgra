@@ -33,6 +33,7 @@ class MyRobot{
     vector<Point> base;
     vector<Point> top;
     vector<Point> side;
+    vector<Point> normals;
     
 
 public:

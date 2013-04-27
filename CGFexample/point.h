@@ -1,6 +1,9 @@
 #ifndef POINT
 #define POINT
 
+#include <vector>
+#include <math.h>
+
 using namespace std;
 
 class Point {
@@ -13,5 +16,7 @@ float y;
 float z;
 
 };
+
+Point CalculateSurfaceNormal(vector<Point> polygon);
 
 #endif
