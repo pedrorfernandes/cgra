@@ -10,6 +10,21 @@ inline double Point::length(){
     return sqrt( (this->x * this->x) + (this->y * this->y) + (this->z * this->z) );
 }
 
+Point calculateSurfaceNormalTriangle(vector<Point> triangle){
+    Point U(triangle.at(1).x - triangle.at(0).x,
+            triangle.at(1).y - triangle.at(0).y,
+            triangle.at(1).z - triangle.at(0).y);
+    Point V(triangle.at(2).x - triangle.at(0).x,
+            triangle.at(2).y - triangle.at(0).y,
+            triangle.at(2).z - triangle.at(0).y);
+    Point normal(0,0,0);
+    
+    normal.x = (U.y * V.z) - (U.z * V.y);
+    normal.y = (U.z * V.x) - (U.x * V.z);
+    normal.z = (U.x * V.y) - (U.y * V.x);
+    return normal;
+}
+
 Point calculateSurfaceNormal(vector<Point> polygon){
     Point normal(0,0,0);
     for (int i = 0; i < polygon.size(); ++i) {

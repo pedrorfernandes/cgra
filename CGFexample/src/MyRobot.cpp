@@ -61,15 +61,16 @@ MyRobot::MyRobot(int stacks){
         triangle1.push_back( side.at(i) );
         triangle1.push_back( side.at(i+1) );
         triangle1.push_back( side.at(deltaSide+i+1) );
-        Point normal1 = calculateSurfaceNormal(triangle1);
+        Point normal1 = calculateSurfaceNormalTriangle(triangle1);
         normals.at(i) + normal1; normals.at(i+1) + normal1; normals.at(deltaSide+i+1) + normal1;
         
         vector<Point> triangle2;
         triangle2.push_back( side.at(i) );
         triangle2.push_back( side.at(deltaSide+i) );
         triangle2.push_back( side.at(deltaSide+i+1) );
-        Point normal2 = calculateSurfaceNormal(triangle2);
+        Point normal2 = calculateSurfaceNormalTriangle(triangle2);
         normals.at(i) + normal2; normals.at(deltaSide+i) + normal2; normals.at(deltaSide+i+1) + normal2;
+         
     }
     
     // the last line connected to the first
@@ -80,14 +81,14 @@ MyRobot::MyRobot(int stacks){
         triangle1.push_back( side.at(i) );
         triangle1.push_back( side.at(i+1) );
         triangle1.push_back( side.at(j+1) );
-        Point normal1 = calculateSurfaceNormal(triangle1);
+        Point normal1 = calculateSurfaceNormalTriangle(triangle1);
         normals.at(i) + normal1; normals.at(i+1) + normal1; normals.at(j+1) + normal1;
         
         vector<Point> triangle2; 
         triangle2.push_back( side.at(i) );
         triangle2.push_back( side.at(j) );
         triangle2.push_back( side.at(j+1) );
-        Point normal2 = calculateSurfaceNormal(triangle2);
+        Point normal2 = calculateSurfaceNormalTriangle(triangle2);
         normals.at(i) + normal2; normals.at(j) + normal2; normals.at(j+1) + normal2;
     }
     

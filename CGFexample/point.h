@@ -22,4 +22,6 @@ double z;
 
 Point calculateSurfaceNormal(vector<Point> polygon);
 
+Point calculateSurfaceNormalTriangle(vector<Point> triangle);
+
 #endif
