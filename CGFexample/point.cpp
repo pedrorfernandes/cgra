@@ -1,12 +1,12 @@
 #include "point.h"
 
-Point::Point(float x, float y, float z){
+Point::Point(double x, double y, double z){
     this->x = x;
     this->y = y;
     this->z = z;
 }
 
-inline float Point::length(){
+inline double Point::length(){
     return sqrt( (this->x * this->x) + (this->y * this->y) + (this->z * this->z) );
 }
 
@@ -21,8 +21,8 @@ Point calculateSurfaceNormal(vector<Point> polygon){
         normal.z = normal.z + ( (current.x - next.x) * (current.y + next.y) );
     }
     
-    //float length = sqrt( (normal.x * normal.x) + (normal.y * normal.y) + (normal.z * normal.z) );
-    float length = normal.length();
+    //double length = sqrt( (normal.x * normal.x) + (normal.y * normal.y) + (normal.z * normal.z) );
+    double length = normal.length();
     normal.x = normal.x / length;
     normal.y = normal.y / length;
     normal.z = normal.z / length;
@@ -33,9 +33,11 @@ Point & Point::operator+(const Point &p){
     this->x = (this->x + p.x) / 2;
     this->y = (this->y + p.y) / 2;
     this->z = (this->z + p.z) / 2;
-    float length = this->length();
+    /*
+    double length = this->length();
     this->x = (this->x) / length;
     this->y = (this->y) / length;
     this->z = (this->z) / length;
+     */
     return *this;
 }

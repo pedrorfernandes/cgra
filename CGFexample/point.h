@@ -9,12 +9,12 @@ using namespace std;
 class Point {
 
 public:
-    Point(float x, float y);
-    Point(float x, float y, float z);
-float x;
-float y;
-float z;
-    float length();
+    Point(double x, double y);
+    Point(double x, double y, double z);
+double x;
+double y;
+double z;
+    double length();
     Point & operator+(const Point &p);
 
 

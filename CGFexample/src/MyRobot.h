@@ -27,8 +27,8 @@ class MyRobot{
     double z;
     double speed;
     double rotationSpeed;
-    float pi;
-    float deg2rad;
+    double pi;
+    double deg2rad;
     
     int deltaSide;
     int slices;
