@@ -50,7 +50,48 @@ MyRobot::MyRobot(int stacks){
         }
         side.push_back(Q);
     }
+    
+    for (int i = 0; i < side.size(); ++i) {
+        normals.push_back(Point(0,0,0));
+    }
 
+    int i;
+    for (i = 0; i < side.size()-1-deltaSide; ++i) {
+        if ( (i+1) % deltaSide == 0 ) continue;
+        vector<Point> triangle1;
+        triangle1.push_back( side.at(i) );
+        triangle1.push_back( side.at(i+1) );
+        triangle1.push_back( side.at(deltaSide+i+1) );
+        Point normal1 = calculateSurfaceNormal(triangle1);
+        normals.at(i) + normal1; normals.at(i+1) + normal1; normals.at(deltaSide+i+1) + normal1;
+        
+        vector<Point> triangle2;
+        triangle2.push_back( side.at(i) );
+        triangle2.push_back( side.at(deltaSide+i) );
+        triangle2.push_back( side.at(deltaSide+i+1) );
+        Point normal2 = calculateSurfaceNormal(triangle2);
+        normals.at(i) + normal2; normals.at(deltaSide+i) + normal2; normals.at(deltaSide+i+1) + normal2;
+    }
+    
+    // the last line connected to the first
+    i++;
+    for(int j = 0 ; i < side.size()-1; i++, j++){
+        if ( (i+1) % deltaSide == 0 ) continue;
+        vector<Point> triangle1; 
+        triangle1.push_back( side.at(i) );
+        triangle1.push_back( side.at(i+1) );
+        triangle1.push_back( side.at(j+1) );
+        Point normal1 = calculateSurfaceNormal(triangle1);
+        normals.at(i) + normal1; normals.at(i+1) + normal1; normals.at(j+1) + normal1;
+        
+        vector<Point> triangle2; 
+        triangle2.push_back( side.at(i) );
+        triangle2.push_back( side.at(j) );
+        triangle2.push_back( side.at(j+1) );
+        Point normal2 = calculateSurfaceNormal(triangle2);
+        normals.at(i) + normal2; normals.at(j) + normal2; normals.at(j+1) + normal2;
+    }
+    
     speed = 0.2;
     x = 0.0;
     y = 0.0;
@@ -78,41 +119,43 @@ void MyRobot::draw(){
     
     glBegin(GL_POLYGON);
     for (int i = 0; i < base.size(); ++i) {
-        glNormal3d(base.at(i).x, base.at(i).y, base.at(i).z);
         glVertex3d(base.at(i).x, base.at(i).y, base.at(i).z);
     }
     glEnd();
     
     int i;
     for(i = 0; i < side.size()-1-deltaSide; i++){
+        if ( (i+1) % deltaSide == 0 ) continue;
         glBegin(GL_TRIANGLE_STRIP);
-        glNormal3d(side.at(i).x, side.at(i).y, side.at(i).z);
+        glNormal3d(normals.at(i).x, normals.at(i).y, normals.at(i).z);
         glVertex3d(side.at(i).x, side.at(i).y, side.at(i).z);
         
-        glNormal3d(side.at(i+1).x, side.at(i+1).y, side.at(i+1).z);
+        glNormal3d(normals.at(i+1).x, normals.at(i+1).y, normals.at(i+1).z);
         glVertex3d(side.at(i+1).x, side.at(i+1).y, side.at(i+1).z);
         
-        glNormal3d(side.at(deltaSide+i).x, side.at(deltaSide+i).y, side.at(deltaSide+i).z);
+        glNormal3d(normals.at(deltaSide+i).x, normals.at(deltaSide+i).y, normals.at(deltaSide+i).z);
         glVertex3d(side.at(deltaSide+i).x, side.at(deltaSide+i).y, side.at(deltaSide+i).z);
         
-        glNormal3d(side.at(deltaSide+i+1).x, side.at(deltaSide+i+1).y, side.at(deltaSide+i+1).z);
+        glNormal3d(normals.at(deltaSide+i+1).x, normals.at(deltaSide+i+1).y, normals.at(deltaSide+i+1).z);
         glVertex3d(side.at(deltaSide+i+1).x, side.at(deltaSide+i+1).y, side.at(deltaSide+i+1).z);
         glEnd();
     }
     
     // since we don't repeat vertices, we need to draw the last line connected to the first
+    i++;
     for(int j = 0 ; i < side.size()-1; i++, j++){
+        if ( (i+1) % deltaSide == 0 ) continue;
         glBegin(GL_TRIANGLE_STRIP);
-        glNormal3d(side.at(i).x, side.at(i).y, side.at(i).z);
+        glNormal3d(normals.at(i).x, normals.at(i).y, normals.at(i).z);
         glVertex3d(side.at(i).x, side.at(i).y, side.at(i).z);
         
-        glNormal3d(side.at(i+1).x, side.at(i+1).y, side.at(i+1).z);
+        glNormal3d(normals.at(i+1).x, normals.at(i+1).y, normals.at(i+1).z);
         glVertex3d(side.at(i+1).x, side.at(i+1).y, side.at(i+1).z);
         
-        glNormal3d(side.at(j).x, side.at(j).y, side.at(j).z);
+        glNormal3d(normals.at(j).x, normals.at(j).y, normals.at(j).z);
         glVertex3d(side.at(j).x, side.at(j).y, side.at(j).z);
         
-        glNormal3d(side.at(j+1).x, side.at(j+1).y, side.at(j+1).z);
+        glNormal3d(normals.at(j+1).x, normals.at(j+1).y, normals.at(j+1).z);
         glVertex3d(side.at(j+1).x, side.at(j+1).y, side.at(j+1).z);
         glEnd();
     }

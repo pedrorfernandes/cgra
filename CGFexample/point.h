@@ -14,9 +14,12 @@ public:
 float x;
 float y;
 float z;
+    float length();
+    Point & operator+(const Point &p);
+
 
 };
 
-Point CalculateSurfaceNormal(vector<Point> polygon);
+Point calculateSurfaceNormal(vector<Point> polygon);
 
 #endif

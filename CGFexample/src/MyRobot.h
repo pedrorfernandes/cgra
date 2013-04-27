@@ -17,6 +17,8 @@
 #include "myCylinder.h"
 #include "point.h"
 
+#include <iostream>
+
 class MyRobot{
     double angle;
     double startingAngle;
