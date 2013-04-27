@@ -16,7 +16,7 @@ double y;
 double z;
     double length();
     Point & operator+(const Point &p);
-
+    Point & operator*(const int &num);
 
 };
 

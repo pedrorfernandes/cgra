@@ -30,12 +30,14 @@ class MyRobot{
     double pi;
     double deg2rad;
     
+    int stacks;
     int deltaSide;
     int slices;
     vector<Point> base;
     vector<Point> top;
     vector<Point> side;
     vector<Point> normals;
+    vector<Point> topNormals;
     
 
 public:

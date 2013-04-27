@@ -13,10 +13,10 @@ inline double Point::length(){
 Point calculateSurfaceNormalTriangle(vector<Point> triangle){
     Point U(triangle.at(1).x - triangle.at(0).x,
             triangle.at(1).y - triangle.at(0).y,
-            triangle.at(1).z - triangle.at(0).y);
+            triangle.at(1).z - triangle.at(0).z);
     Point V(triangle.at(2).x - triangle.at(0).x,
             triangle.at(2).y - triangle.at(0).y,
-            triangle.at(2).z - triangle.at(0).y);
+            triangle.at(2).z - triangle.at(0).z);
     Point normal(0,0,0);
     
     normal.x = (U.y * V.z) - (U.z * V.y);
@@ -54,5 +54,12 @@ Point & Point::operator+(const Point &p){
     this->y = (this->y) / length;
     this->z = (this->z) / length;
      */
+    return *this;
+}
+
+Point & Point::operator*(const int &num){
+    this->x = (this->x * num);
+    this->y = (this->y * num);
+    this->z = (this->z * num);
     return *this;
 }

@@ -3,13 +3,15 @@
 
 MyRobot::MyRobot(int stacks){
 
+    this->stacks = stacks;
     slices = 12;
     double r = 0.25;
     
-    for(double ang = 45.0; ang <= 405.0; ang += (360.0 / slices)) {
+    for(double ang = 45.0; ang < 405.0; ang += (360.0 / slices)) {
         double rad = ang * PI / 180; // degrees to radians
         top.push_back( Point(r * cos(rad), 1.0, r * sin(rad)) );
     }
+    
     double delta = 1.0/3.0;
     deltaSide = stacks+1;
     base.push_back(Point(0.5, 0.01, 0.5)); // top right
@@ -61,14 +63,14 @@ MyRobot::MyRobot(int stacks){
         triangle1.push_back( side.at(i) );
         triangle1.push_back( side.at(i+1) );
         triangle1.push_back( side.at(deltaSide+i+1) );
-        Point normal1 = calculateSurfaceNormalTriangle(triangle1);
+        Point normal1 = calculateSurfaceNormal(triangle1);
         normals.at(i) + normal1; normals.at(i+1) + normal1; normals.at(deltaSide+i+1) + normal1;
         
         vector<Point> triangle2;
         triangle2.push_back( side.at(i) );
-        triangle2.push_back( side.at(deltaSide+i) );
         triangle2.push_back( side.at(deltaSide+i+1) );
-        Point normal2 = calculateSurfaceNormalTriangle(triangle2);
+        triangle2.push_back( side.at(deltaSide+i) );
+        Point normal2 = calculateSurfaceNormal(triangle2);
         normals.at(i) + normal2; normals.at(deltaSide+i) + normal2; normals.at(deltaSide+i+1) + normal2;
          
     }
@@ -77,18 +79,18 @@ MyRobot::MyRobot(int stacks){
     i++;
     for(int j = 0 ; i < side.size()-1; i++, j++){
         if ( (i+1) % deltaSide == 0 ) continue;
-        vector<Point> triangle1; 
+        vector<Point> triangle1;
         triangle1.push_back( side.at(i) );
         triangle1.push_back( side.at(i+1) );
         triangle1.push_back( side.at(j+1) );
-        Point normal1 = calculateSurfaceNormalTriangle(triangle1);
+        Point normal1 = calculateSurfaceNormal(triangle1);
         normals.at(i) + normal1; normals.at(i+1) + normal1; normals.at(j+1) + normal1;
         
-        vector<Point> triangle2; 
+        vector<Point> triangle2;
         triangle2.push_back( side.at(i) );
-        triangle2.push_back( side.at(j) );
         triangle2.push_back( side.at(j+1) );
-        Point normal2 = calculateSurfaceNormalTriangle(triangle2);
+        triangle2.push_back( side.at(j) );
+        Point normal2 = calculateSurfaceNormal(triangle2);
         normals.at(i) + normal2; normals.at(j) + normal2; normals.at(j+1) + normal2;
     }
     
