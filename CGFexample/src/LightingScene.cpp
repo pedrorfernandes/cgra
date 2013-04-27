@@ -185,7 +185,7 @@ void LightingScene::init()
     
     setUpdatePeriod(UPDATE_INTERVAL);
     
-    myBot = new MyRobot();
+    myBot = new MyRobot(3);
     
     clockStop = 0;
 }
@@ -231,7 +231,7 @@ void LightingScene::display()
     
     glPushMatrix();
     glTranslated(7.5, 0, 7.5);
-    glRotated(150, 0.0, -1, 0.0);
+    //glRotated(150, 0.0, -1, 0.0);
     myBot->draw();
     glPopMatrix();
     

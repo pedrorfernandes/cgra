@@ -18,6 +18,7 @@
 		AA63E24116D422F1003287C6 /* texshader.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E23C16D422CA003287C6 /* texshader.vert */; };
 		EB01ECA917146EB3009E1716 /* MyClockHand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB01ECA717146EB3009E1716 /* MyClockHand.cpp */; };
 		EB01ECAC171483C2009E1716 /* MyPaperPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB01ECAA171483C2009E1716 /* MyPaperPlane.cpp */; };
+		EB12F3261726EF3400E7CB96 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB12F3241726EF3400E7CB96 /* point.cpp */; };
 		EB564CA416E8F5E600A7D1E7 /* ExampleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564C9716E8F5E600A7D1E7 /* ExampleObject.cpp */; };
 		EB564CA516E8F5E600A7D1E7 /* LightingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564C9916E8F5E600A7D1E7 /* LightingScene.cpp */; };
 		EB564CA616E8F5E600A7D1E7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB564C9B16E8F5E600A7D1E7 /* main.cpp */; };
@@ -76,6 +77,8 @@
 		EB01ECA817146EB3009E1716 /* MyClockHand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyClockHand.h; path = src/MyClockHand.h; sourceTree = SOURCE_ROOT; };
 		EB01ECAA171483C2009E1716 /* MyPaperPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyPaperPlane.cpp; path = src/MyPaperPlane.cpp; sourceTree = SOURCE_ROOT; };
 		EB01ECAB171483C2009E1716 /* MyPaperPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyPaperPlane.h; path = src/MyPaperPlane.h; sourceTree = SOURCE_ROOT; };
+		EB12F3241726EF3400E7CB96 /* point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = point.cpp; sourceTree = SOURCE_ROOT; };
+		EB12F3251726EF3400E7CB96 /* point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = point.h; sourceTree = SOURCE_ROOT; };
 		EB40082B170B37AF00A5888C /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
 		EB40082C170B37AF00A5888C /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
 		EB40082D170B37AF00A5888C /* slides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slides.png; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				EB01ECAB171483C2009E1716 /* MyPaperPlane.h */,
 				EBC3CA2317243CED00508750 /* MyRobot.cpp */,
 				EBC3CA2417243CED00508750 /* MyRobot.h */,
+				EB12F3241726EF3400E7CB96 /* point.cpp */,
+				EB12F3251726EF3400E7CB96 /* point.h */,
 			);
 			path = CGFExample;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				EB01ECAC171483C2009E1716 /* MyPaperPlane.cpp in Sources */,
 				EBA8BE59171DA90C00995B4E /* TPinterface.cpp in Sources */,
 				EBC3CA2517243CED00508750 /* MyRobot.cpp in Sources */,
+				EB12F3261726EF3400E7CB96 /* point.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

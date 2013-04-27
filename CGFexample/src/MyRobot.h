@@ -11,10 +11,13 @@
 #include "myUnitCube.h"
 #include <math.h>
 
+#define PI 3.14159265359
+
+#include "myLamp.h"
+#include "myCylinder.h"
+#include "point.h"
+
 class MyRobot{
-    vector<float> xTriangle1;
-    vector<float> yTriangle1;
-    vector<float> zTriangle1;
     double angle;
     double startingAngle;
     double x;
@@ -24,9 +27,16 @@ class MyRobot{
     double rotationSpeed;
     float pi;
     float deg2rad;
+    
+    int deltaSide;
+    int slices;
+    vector<Point> base;
+    vector<Point> top;
+    vector<Point> side;
+    
 
 public:
-    MyRobot();
+    MyRobot(int stacks);
     void draw();
     void update(long miliseconds);
     void moveForward();
