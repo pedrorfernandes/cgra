@@ -51,6 +51,7 @@ public:
     CGFappearance* wallAppearance;
     CGFappearance* columnAppearance;
     CGFappearance* lampAppearance;
+    CGFappearance* robotAppearance;
     
     void toggleSomething();
     

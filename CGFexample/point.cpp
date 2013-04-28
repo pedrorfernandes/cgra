@@ -6,6 +6,12 @@ Point::Point(double x, double y, double z){
     this->z = z;
 }
 
+Point::Point(double s, double t){
+    this->x = s;
+    this->y = t;
+    this->z = 0;
+}
+
 inline double Point::length(){
     return sqrt( (this->x * this->x) + (this->y * this->y) + (this->z * this->z) );
 }
@@ -36,7 +42,6 @@ Point calculateSurfaceNormal(vector<Point> polygon){
         normal.z = normal.z + ( (current.x - next.x) * (current.y + next.y) );
     }
     
-    //double length = sqrt( (normal.x * normal.x) + (normal.y * normal.y) + (normal.z * normal.z) );
     double length = normal.length();
     normal.x = normal.x / length;
     normal.y = normal.y / length;
@@ -48,18 +53,5 @@ Point & Point::operator+(const Point &p){
     this->x = (this->x + p.x) / 2;
     this->y = (this->y + p.y) / 2;
     this->z = (this->z + p.z) / 2;
-    /*
-    double length = this->length();
-    this->x = (this->x) / length;
-    this->y = (this->y) / length;
-    this->z = (this->z) / length;
-     */
-    return *this;
-}
-
-Point & Point::operator*(const int &num){
-    this->x = (this->x * num);
-    this->y = (this->y * num);
-    this->z = (this->z * num);
     return *this;
 }

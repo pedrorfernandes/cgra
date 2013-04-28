@@ -48,6 +48,8 @@ MyRobot::MyRobot(int stacks){
             side.push_back(Point(P.x + delta.x * t,
                                  P.y + delta.y * t,
                                  P.z + delta.z * t));
+            texels.push_back(Point( ((P.x + delta.x * t)+0.5),
+                                   1-((P.z + delta.z * t)+0.5)) );
             
         }
     }
@@ -133,15 +135,19 @@ void MyRobot::draw(){
     for(i = 0; i < side.size()-1-deltaSide; i++){
         if ( (i+1) % deltaSide == 0 ) continue;
         glBegin(GL_TRIANGLE_STRIP);
+        glTexCoord2d(texels.at(i).x, texels.at(i).y);
         glNormal3d(normals.at(i).x, normals.at(i).y, normals.at(i).z);
         glVertex3d(side.at(i).x, side.at(i).y, side.at(i).z);
         
+        glTexCoord2d(texels.at(i+1).x, texels.at(i+1).y);
         glNormal3d(normals.at(i+1).x, normals.at(i+1).y, normals.at(i+1).z);
         glVertex3d(side.at(i+1).x, side.at(i+1).y, side.at(i+1).z);
         
+        glTexCoord2d(texels.at(deltaSide+i).x, texels.at(deltaSide+i).y);
         glNormal3d(normals.at(deltaSide+i).x, normals.at(deltaSide+i).y, normals.at(deltaSide+i).z);
         glVertex3d(side.at(deltaSide+i).x, side.at(deltaSide+i).y, side.at(deltaSide+i).z);
         
+        glTexCoord2d(texels.at(deltaSide+i+1).x, texels.at(deltaSide+i+1).y);
         glNormal3d(normals.at(deltaSide+i+1).x, normals.at(deltaSide+i+1).y, normals.at(deltaSide+i+1).z);
         glVertex3d(side.at(deltaSide+i+1).x, side.at(deltaSide+i+1).y, side.at(deltaSide+i+1).z);
         glEnd();
@@ -152,19 +158,24 @@ void MyRobot::draw(){
     for(int j = 0 ; i < side.size()-1; i++, j++){
         if ( (i+1) % deltaSide == 0 ) continue;
         glBegin(GL_TRIANGLE_STRIP);
+        glTexCoord2d(texels.at(i).x, texels.at(i).y);
         glNormal3d(normals.at(i).x, normals.at(i).y, normals.at(i).z);
         glVertex3d(side.at(i).x, side.at(i).y, side.at(i).z);
         
+        glTexCoord2d(texels.at(i+1).x, texels.at(i+1).y);
         glNormal3d(normals.at(i+1).x, normals.at(i+1).y, normals.at(i+1).z);
         glVertex3d(side.at(i+1).x, side.at(i+1).y, side.at(i+1).z);
         
+        glTexCoord2d(texels.at(j).x, texels.at(j).y);
         glNormal3d(normals.at(j).x, normals.at(j).y, normals.at(j).z);
         glVertex3d(side.at(j).x, side.at(j).y, side.at(j).z);
         
+        glTexCoord2d(texels.at(j+1).x, texels.at(j+1).y);
         glNormal3d(normals.at(j+1).x, normals.at(j+1).y, normals.at(j+1).z);
         glVertex3d(side.at(j+1).x, side.at(j+1).y, side.at(j+1).z);
         glEnd();
     }
+    
 
     //glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
 

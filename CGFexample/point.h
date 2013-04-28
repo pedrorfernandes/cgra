@@ -9,14 +9,13 @@ using namespace std;
 class Point {
 
 public:
-    Point(double x, double y);
     Point(double x, double y, double z);
+    Point(double s, double t);
 double x;
 double y;
 double z;
     double length();
     Point & operator+(const Point &p);
-    Point & operator*(const int &num);
 
 };
 

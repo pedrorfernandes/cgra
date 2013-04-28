@@ -17,8 +17,6 @@
 #include "myCylinder.h"
 #include "point.h"
 
-#include <iostream>
-
 class MyRobot{
     double angle;
     double startingAngle;
@@ -37,8 +35,7 @@ class MyRobot{
     vector<Point> top;
     vector<Point> side;
     vector<Point> normals;
-    vector<Point> topNormals;
-    
+    vector<Point> texels;
 
 public:
     MyRobot(int stacks);
