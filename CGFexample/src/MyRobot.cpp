@@ -113,6 +113,7 @@ void MyRobot::draw(){
     glBegin(GL_POLYGON);
     for (int i = side.size()-1; i >= 0; i -= deltaSide) {
         glNormal3d(0, 1, 0);
+        glTexCoord2d(texels.at(i).x, texels.at(i).y);
         glVertex3d(side.at(i).x, side.at(i).y, side.at(i).z);
     }
     glEnd();
@@ -121,6 +122,7 @@ void MyRobot::draw(){
     glBegin(GL_POLYGON);
     for (int i = 0; i < side.size(); i += deltaSide) {
         glNormal3d(0, -1, 0);
+        glTexCoord2d(texels.at(i).x, texels.at(i).y);
         glVertex3d(side.at(i).x, side.at(i).y, side.at(i).z);
     }
     glEnd();
