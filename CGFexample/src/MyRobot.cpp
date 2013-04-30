@@ -43,10 +43,6 @@ MyRobot::MyRobot(int stacks){
         Point P(base.at(i).x, base.at(i).y, base.at(i).z);
         Point Q(top.at(i).x, top.at(i).y, top.at(i).z);
         Point delta(Q.x - P.x, Q.y - P.y, Q.z - P.z);
-        /*
-        Point T(0.0, top.at(i).y, 0.0);
-        Point deltaT(T.x - P.x, T.y - P.y, T.z - P.z);
-        */
         for(double t = 0.0; t <= 1.0; t += (1.0/stacks)){
             // line -> P + (Q-P)*t
             side.push_back(Point(P.x + delta.x * t,
@@ -90,46 +86,6 @@ MyRobot::MyRobot(int stacks){
 
     }
     
-    /*
-    int i;
-    for (i = 0; i < side.size()-1-deltaSide; ++i) {
-        if ( (i+1) % deltaSide == 0 ) continue;
-        vector<Point> triangle1;
-        triangle1.push_back( side.at(i) );
-        triangle1.push_back( side.at(i+1) );
-        triangle1.push_back( side.at(deltaSide+i+1) );
-        Point normal1 = calculateSurfaceNormal(triangle1);
-        normals.at(i) + normal1; normals.at(i+1) + normal1; normals.at(deltaSide+i+1) + normal1;
-        
-        vector<Point> triangle2;
-        triangle2.push_back( side.at(i) );
-        triangle2.push_back( side.at(deltaSide+i+1) );
-        triangle2.push_back( side.at(deltaSide+i) );
-        Point normal2 = calculateSurfaceNormal(triangle2);
-        normals.at(i) + normal2; normals.at(deltaSide+i) + normal2; normals.at(deltaSide+i+1) + normal2;
-         
-    }
-    
-    // the last line connected to the first
-    i++;
-    for(int j = 0 ; i < side.size()-1; i++, j++){
-        if ( (i+1) % deltaSide == 0 ) continue;
-        vector<Point> triangle1;
-        triangle1.push_back( side.at(i) );
-        triangle1.push_back( side.at(i+1) );
-        triangle1.push_back( side.at(j+1) );
-        Point normal1 = calculateSurfaceNormal(triangle1);
-        normals.at(i) + normal1; normals.at(i+1) + normal1; normals.at(j+1) + normal1;
-        
-        vector<Point> triangle2;
-        triangle2.push_back( side.at(i) );
-        triangle2.push_back( side.at(j+1) );
-        triangle2.push_back( side.at(j) );
-        Point normal2 = calculateSurfaceNormal(triangle2);
-        normals.at(i) + normal2; normals.at(j) + normal2; normals.at(j+1) + normal2;
-    }
-     */
-    
     speed = 0.2;
     x = 0.0;
     y = 0.0;
@@ -147,6 +103,8 @@ MyRobot::MyRobot(int stacks){
 }
 
 void MyRobot::draw(){
+    //glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+
     glPushMatrix();
     glTranslated( x, y, z );
     glRotated(angle, 0, -1, 0);
@@ -167,8 +125,6 @@ void MyRobot::draw(){
     }
     glEnd();
     
-    //glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
-
     int multiplier;
     int i; int j;
     for(multiplier = 1; multiplier < 13; multiplier++){
