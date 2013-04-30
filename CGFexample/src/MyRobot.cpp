@@ -100,11 +100,43 @@ MyRobot::MyRobot(int stacks){
     // clean the base and top vectors, we don't need them anymore
     base.clear();
     top.clear();
+    
+    texture1 = new CGFappearance("robot1.png", GL_REPEAT, GL_REPEAT);
+    texture2 = new CGFappearance("robot2.png", GL_REPEAT, GL_REPEAT);
+    texture3 = new CGFappearance("robot1.jpg", GL_REPEAT, GL_REPEAT);
+    texture4 = new CGFappearance("matrix.jpg", GL_REPEAT, GL_REPEAT);
+    texture = 1;
+}
+
+inline void MyRobot::updateTexture(){
+    switch (texture) {
+        case 0:
+            break;
+        case 1:
+            texture1->apply();
+            break;
+        case 2:
+            texture2->apply();
+            break;
+        case 3:
+            texture3->apply();
+            break;
+        case 4:
+            texture4->apply();
+            break;
+            
+        default:
+            texture1->apply();
+            texture = 1;
+            break;
+    }
 }
 
 void MyRobot::draw(){
     //glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
 
+    updateTexture();
+    
     glPushMatrix();
     glTranslated( x, y, z );
     glRotated(angle, 0, -1, 0);

@@ -59,6 +59,19 @@ void TPinterface::initGUI()
     addCheckboxToPanel(lightsPanel, (char*)"Luz 5", &(((LightingScene*) scene)->light4On), 4);
     
     addButton((char*)"Parar/continuar relogio", 5);
+        
+    GLUI_Panel * texturePanel = addPanel( (char*)"Textura do Robot");
+    
+    GLUI_Listbox * textureList = addListboxToPanel(texturePanel, (char*)"Escolha", &(((LightingScene*) scene)->myBot->texture), 6);
+    
+    textureList->add_item (0, "Nenhuma");
+    textureList->add_item (1, "Android");
+    textureList->add_item (2, "Metal");
+    textureList->add_item (3, "Predefinida");
+    textureList->add_item (4, "Matrix");
+    
+    textureList->set_int_val (1);
+    
 }
 
 void TPinterface::processGUI(GLUI_Control *ctrl)

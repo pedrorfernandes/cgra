@@ -185,7 +185,6 @@ void LightingScene::init()
     
     setUpdatePeriod(UPDATE_INTERVAL);
     
-    robotAppearance = new CGFappearance("robot1.jpg", GL_REPEAT, GL_REPEAT);
     myBot = new MyRobot(3);
     
     clockStop = 0;
@@ -234,7 +233,6 @@ void LightingScene::display()
     glTranslated(7.5, 0, 7.5);
     glRotated(150, 0.0, -1, 0.0);
     //glScaled(2.0, 5.0, 2.0);
-    robotAppearance->apply();
     myBot->draw();
     glPopMatrix();
     

@@ -36,8 +36,15 @@ class MyRobot{
     vector<Point> side;
     vector<Point> normals;
     vector<Point> texels;
+    
+    CGFappearance * texture1;
+    CGFappearance * texture2;
+    CGFappearance * texture3;
+    CGFappearance * texture4;
 
 public:
+    int texture;
+
     MyRobot(int stacks);
     void draw();
     void update(long miliseconds);
@@ -45,6 +52,7 @@ public:
     void moveBackward();
     void rotateLeft();
     void rotateRight();
+    void updateTexture();
 };
 
 
