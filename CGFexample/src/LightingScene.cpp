@@ -197,6 +197,7 @@ void LightingScene::update(unsigned long miliseconds){
         clockHandSeconds->update(UPDATE_INTERVAL);
     }
     myPaperPlane->update(UPDATE_INTERVAL);
+    myBot->update(UPDATE_INTERVAL);
 }
 
 void LightingScene::display()

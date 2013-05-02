@@ -16,6 +16,12 @@
 #include "myLamp.h"
 #include "myCylinder.h"
 #include "point.h"
+#include <deque>
+
+#define UPDATE_TEXTURE 10
+#define ANIMATION_OFF 0
+#define ANIMATION_DOWN 1
+#define ANIMATION_RIGHT 2
 
 class MyRobot{
     double angle;
@@ -31,16 +37,19 @@ class MyRobot{
     int stacks;
     int deltaSide;
     int slices;
-    vector<Point> base;
-    vector<Point> top;
     vector<Point> side;
     vector<Point> normals;
-    vector<Point> texels;
+    deque<deque<Point> > texels;
     
     CGFappearance * texture1;
     CGFappearance * texture2;
     CGFappearance * texture3;
     CGFappearance * texture4;
+    CGFappearance * texture5;
+    
+    long time;
+    int textureAnimationCounter;
+    int textureAnimation;
 
 public:
     int texture;
@@ -53,6 +62,8 @@ public:
     void rotateLeft();
     void rotateRight();
     void updateTexture();
+    void translateTexture();
+    void resetTexture();
 };
 
 

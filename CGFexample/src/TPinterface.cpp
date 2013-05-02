@@ -66,9 +66,10 @@ void TPinterface::initGUI()
     
     textureList->add_item (0, "Nenhuma");
     textureList->add_item (1, "Android");
-    textureList->add_item (2, "Metal");
-    textureList->add_item (3, "Predefinida");
-    textureList->add_item (4, "Matrix");
+    textureList->add_item (2, "Wall-e");
+    textureList->add_item (3, "Teste");
+    textureList->add_item (4, "Laser");
+    textureList->add_item (5, "Matrix");
     
     textureList->set_int_val (1);
     

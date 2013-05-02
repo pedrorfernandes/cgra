@@ -7,6 +7,9 @@ MyRobot::MyRobot(int stacks){
     slices = 12;
     double r = 0.25;
     
+    vector<Point> base;
+    vector<Point> top;
+    
     for(double ang = 45.0; ang < 405.0; ang += (360.0 / slices)) {
         double rad = ang * PI / 180; // degrees to radians
         top.push_back( Point(r * cos(rad), 1.0, r * sin(rad)) );
@@ -37,6 +40,10 @@ MyRobot::MyRobot(int stacks){
     // (right) bottom to top
     base.push_back(Point(0.5, 0.01, -0.5+delta));
     base.push_back(Point(0.5, 0.01, -0.5+2*delta));
+    
+    for (int i = 0; i < base.size(); ++i){
+        texels.push_back(deque<Point>());
+    }
 
     
     for(int i = 0; i < base.size(); ++i){
@@ -48,8 +55,8 @@ MyRobot::MyRobot(int stacks){
             side.push_back(Point(P.x + delta.x * t,
                                  P.y + delta.y * t,
                                  P.z + delta.z * t));
-            texels.push_back(Point( ((P.x + delta.x * t)+0.5),
-                                   1-((P.z + delta.z * t)+0.5)) );
+            texels.at(i).push_back(Point( ((P.x + delta.x * t)+0.5),
+                                        1-((P.z + delta.z * t)+0.5)) );
             
         }
     }
@@ -63,7 +70,6 @@ MyRobot::MyRobot(int stacks){
         k = ((multiplier+1)*(stacks+1)) % (side.size());
         
         // first point normal
-        
         Point points[] = {side.at(j), side.at(i+1), side.at(k+1), side.at(k), side.at(i)};
         vector<Point> polygon (points, points + sizeof(points) / sizeof(Point) );
         normal = calculateSurfaceNormal(polygon);
@@ -97,15 +103,15 @@ MyRobot::MyRobot(int stacks){
     pi = acos(-1.0);
     deg2rad=pi/180.0;
     
-    // clean the base and top vectors, we don't need them anymore
-    base.clear();
-    top.clear();
-    
-    texture1 = new CGFappearance("robot1.png", GL_REPEAT, GL_REPEAT);
-    texture2 = new CGFappearance("robot2.png", GL_REPEAT, GL_REPEAT);
-    texture3 = new CGFappearance("robot1.jpg", GL_REPEAT, GL_REPEAT);
-    texture4 = new CGFappearance("matrix.jpg", GL_REPEAT, GL_REPEAT);
+    texture1 = new CGFappearance("robot1.jpg", GL_REPEAT, GL_REPEAT);
+    texture2 = new CGFappearance("robot2.jpg", GL_REPEAT, GL_REPEAT);
+    texture3 = new CGFappearance("robot3.jpg", GL_REPEAT, GL_REPEAT);
+    texture4 = new CGFappearance("robot4.jpg", GL_REPEAT, GL_REPEAT);
+    texture5 = new CGFappearance("robot5.jpg", GL_REPEAT, GL_REPEAT);
     texture = 1;
+    time = 0;
+    textureAnimationCounter = 0;
+    textureAnimation = ANIMATION_OFF;
 }
 
 inline void MyRobot::updateTexture(){
@@ -114,20 +120,29 @@ inline void MyRobot::updateTexture(){
             break;
         case 1:
             texture1->apply();
+            resetTexture(); textureAnimation = ANIMATION_OFF;
             break;
         case 2:
             texture2->apply();
+            resetTexture(); textureAnimation = ANIMATION_OFF;
             break;
         case 3:
             texture3->apply();
+            resetTexture(); textureAnimation = ANIMATION_OFF;
             break;
         case 4:
             texture4->apply();
+            textureAnimation = ANIMATION_RIGHT;
+            break;
+        case 5:
+            texture5->apply();
+            textureAnimation = ANIMATION_RIGHT;
             break;
             
         default:
             texture1->apply();
             texture = 1;
+            resetTexture(); textureAnimation = ANIMATION_OFF;
             break;
     }
 }
@@ -145,7 +160,8 @@ void MyRobot::draw(){
     glBegin(GL_POLYGON);
     for (int i = side.size()-1; i >= 0; i -= deltaSide) {
         glNormal3d(0, 1, 0);
-        glTexCoord2d(texels.at(i).x, texels.at(i).y);
+        glTexCoord2d(texels.at(i/deltaSide).at(i%deltaSide).x,
+                     texels.at(i/deltaSide).at(i%deltaSide).y);
         glVertex3d(side.at(i).x, side.at(i).y, side.at(i).z);
     }
     glEnd();
@@ -154,7 +170,8 @@ void MyRobot::draw(){
     glBegin(GL_POLYGON);
     for (int i = 0; i < side.size(); i += deltaSide) {
         glNormal3d(0, -1, 0);
-        glTexCoord2d(texels.at(i).x, texels.at(i).y);
+        glTexCoord2d(texels.at(i/deltaSide).at(i%deltaSide).x,
+                     texels.at(i/deltaSide).at(i%deltaSide).y);
         glVertex3d(side.at(i).x, side.at(i).y, side.at(i).z);
     }
     glEnd();
@@ -168,12 +185,14 @@ void MyRobot::draw(){
 
         for(int stack = 0; stack <= stacks; stack++){
             
-            glTexCoord2d(texels.at(i).x, texels.at(i).y);
+            glTexCoord2d(texels.at(i/deltaSide).at(i%deltaSide).x,
+                         texels.at(i/deltaSide).at(i%deltaSide).y);
             glNormal3d(normals.at(i).x, normals.at(i).y, normals.at(i).z);
             glVertex3d(side.at(i).x, side.at(i).y, side.at(i).z);
             i++;
             
-            glTexCoord2d(texels.at(j).x, texels.at(j).y);
+            glTexCoord2d(texels.at(j/deltaSide).at(j%deltaSide).x,
+                         texels.at(j/deltaSide).at(j%deltaSide).y);
             glNormal3d(normals.at(j).x, normals.at(j).y, normals.at(j).z);
             glVertex3d(side.at(j).x, side.at(j).y, side.at(j).z);
             j++;
@@ -188,8 +207,52 @@ void MyRobot::draw(){
     glPopMatrix();
 }
 
-void MyRobot::update(long miliseconds){
+void MyRobot::translateTexture(){
+    textureAnimationCounter++;
     
+    switch (textureAnimation) {
+        case ANIMATION_OFF:
+            break;
+        case ANIMATION_DOWN:
+        {
+            if (textureAnimationCounter % deltaSide == 0)
+                textureAnimationCounter = 0;
+            for (int i = 0; i < texels.size(); ++i) {
+                Point n = texels.at(i).front();
+                texels.at(i).pop_front();
+                texels.at(i).push_back(n);
+            }
+            break;
+        }
+        case ANIMATION_RIGHT:
+        {
+            if (textureAnimationCounter % slices == 0)
+                textureAnimationCounter = 0;
+            deque<Point> n = texels.at(0);
+            texels.pop_front();
+            texels.push_back(n);
+            break;
+        }
+            
+        default:
+            break;
+    }
+
+}
+
+void MyRobot::resetTexture(){
+    while (textureAnimationCounter != 0) {
+        translateTexture();
+    }
+}
+
+void MyRobot::update(long miliseconds){
+    if (textureAnimation == ANIMATION_OFF) return;
+    time += miliseconds;
+    if (time % UPDATE_TEXTURE == 0 ){
+        translateTexture();
+        time -= UPDATE_TEXTURE;
+    }
 }
 
 void MyRobot::moveForward(){
