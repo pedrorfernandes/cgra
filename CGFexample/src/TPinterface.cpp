@@ -58,6 +58,8 @@ void TPinterface::initGUI()
     addCheckboxToPanel(lightsPanel, (char*)"Luz 4", &(((LightingScene*) scene)->light3On), 3);
     addCheckboxToPanel(lightsPanel, (char*)"Luz 5", &(((LightingScene*) scene)->light4On), 4);
     
+    addColumn();
+    
     addButton((char*)"Parar/continuar relogio", 5);
         
     GLUI_Panel * texturePanel = addPanel( (char*)"Textura do Robot");
