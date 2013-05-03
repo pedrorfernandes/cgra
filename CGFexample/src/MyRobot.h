@@ -50,8 +50,8 @@ class MyRobot{
     long time;
     int textureAnimationCounter;
     int textureAnimation;
-
 public:
+    int isWireframe;
     int texture;
 
     MyRobot(int stacks);

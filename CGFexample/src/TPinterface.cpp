@@ -62,9 +62,9 @@ void TPinterface::initGUI()
     
     addButton((char*)"Parar/continuar relogio", 5);
         
-    GLUI_Panel * texturePanel = addPanel( (char*)"Textura do Robot");
+    GLUI_Panel * texturePanel = addPanel( (char*)"Robot");
     
-    GLUI_Listbox * textureList = addListboxToPanel(texturePanel, (char*)"Escolha", &(((LightingScene*) scene)->myBot->texture), 6);
+    GLUI_Listbox * textureList = addListboxToPanel(texturePanel, (char*)"Textura ", &(((LightingScene*) scene)->myBot->texture), 6);
     
     textureList->add_item (0, "Nenhuma");
     textureList->add_item (1, "Android");
@@ -74,6 +74,11 @@ void TPinterface::initGUI()
     textureList->add_item (5, "Matrix");
     
     textureList->set_int_val (1);
+    
+    GLUI_RadioGroup * radioGroup = addRadioGroupToPanel (texturePanel, &(((LightingScene*) scene)->myBot->isWireframe) , 7);
+    
+    addRadioButtonToGroup(radioGroup, (char*) "Com textura");
+    addRadioButtonToGroup(radioGroup, (char*) "Wireframe");
     
 }
 

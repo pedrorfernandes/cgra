@@ -112,6 +112,8 @@ MyRobot::MyRobot(int stacks){
     time = 0;
     textureAnimationCounter = 0;
     textureAnimation = ANIMATION_OFF;
+    isWireframe = 0;
+    
 }
 
 inline void MyRobot::updateTexture(){
@@ -148,8 +150,8 @@ inline void MyRobot::updateTexture(){
 }
 
 void MyRobot::draw(){
-    //glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
-
+    if (isWireframe) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    
     updateTexture();
     
     glPushMatrix();
@@ -201,8 +203,7 @@ void MyRobot::draw(){
         glEnd();
     }
     
-
-    //glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
+    if (isWireframe) glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
 
     glPopMatrix();
 }
