@@ -163,6 +163,7 @@ void LightingScene::init()
     lampAppearance = new CGFappearance("wall.png", GL_REPEAT, GL_REPEAT);
 
     window->setManyTexels(true);
+    window->setWindow(true);
     floor->setManyTexels(true);
     
     clock = new MyClock();
@@ -188,6 +189,10 @@ void LightingScene::init()
     myBot = new MyRobot(3);
     
     clockStop = 0;
+    
+    landscape = new Plane();
+    landscapeAppearance = new CGFappearance("landscape.png", GL_REPEAT, GL_REPEAT);
+
 }
 
 void LightingScene::update(unsigned long miliseconds){
@@ -231,10 +236,10 @@ void LightingScene::display()
     myPaperPlane->draw();
     
     glPushMatrix();
-    glTranslated(7.5, 0, 7.5);
-    glRotated(150, 0.0, -1, 0.0);
-    //glScaled(2.0, 5.0, 2.0);
-    myBot->draw();
+        glTranslated(7.5, 0, 7.5);
+        glRotated(150, 0.0, -1, 0.0);
+        //glScaled(2.0, 5.0, 2.0);
+        myBot->draw();
     glPopMatrix();
     
 	glPushMatrix();
@@ -290,6 +295,17 @@ void LightingScene::display()
         windowAppearance->apply();
 		window->draw();
 	glPopMatrix();
+    
+    
+    // Landscape to see from window
+	glPushMatrix();
+        glTranslated(-50,4,7.5);
+        glRotated(90.0,1,0,0);
+        glRotated(-90.0,0,0,1);
+        glScaled(15 * 3 , 0.2, 8 * 3);
+        landscapeAppearance->apply();
+        landscape->draw();
+	glPopMatrix();
 
 	// Board A
 	glPushMatrix();
@@ -321,7 +337,7 @@ void LightingScene::display()
 
 	//First Table
 	glPushMatrix();
-		glTranslated(4,0,8);
+		glTranslated(15,0,2);
 		table->draw();
 	glPopMatrix();
 

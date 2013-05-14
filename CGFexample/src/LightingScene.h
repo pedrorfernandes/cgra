@@ -43,6 +43,7 @@ public:
     MyClockHand* clockHandSeconds;
     MyPaperPlane* myPaperPlane;
     MyRobot * myBot;
+    Plane* landscape;
 
     CGFappearance* slidesAppearance;
     CGFappearance* boardAppearance;
@@ -52,6 +53,7 @@ public:
     CGFappearance* columnAppearance;
     CGFappearance* lampAppearance;
     CGFappearance* robotAppearance;
+    CGFappearance* landscapeAppearance;
     
     void toggleSomething();
     
