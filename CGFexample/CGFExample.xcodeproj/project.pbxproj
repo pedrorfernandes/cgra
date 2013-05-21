@@ -31,6 +31,7 @@
 		EBC2B42D16F8D6DF00E3EB66 /* myLamp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC2B42B16F8D6DF00E3EB66 /* myLamp.cpp */; };
 		EBC3CA2517243CED00508750 /* MyRobot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CA2317243CED00508750 /* MyRobot.cpp */; };
 		EBD2B47116EF7799008A2DD0 /* myCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD2B46F16EF7799008A2DD0 /* myCylinder.cpp */; };
+		EBE85665174BCD340061EA7A /* skyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBE85663174BCD340061EA7A /* skyBox.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +110,8 @@
 		EBC3CA2417243CED00508750 /* MyRobot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyRobot.h; path = src/MyRobot.h; sourceTree = SOURCE_ROOT; };
 		EBD2B46F16EF7799008A2DD0 /* myCylinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myCylinder.cpp; path = src/myCylinder.cpp; sourceTree = SOURCE_ROOT; };
 		EBD2B47016EF7799008A2DD0 /* myCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myCylinder.h; path = src/myCylinder.h; sourceTree = SOURCE_ROOT; };
+		EBE85663174BCD340061EA7A /* skyBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = skyBox.cpp; sourceTree = SOURCE_ROOT; };
+		EBE85664174BCD340061EA7A /* skyBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skyBox.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				EBC3CA2417243CED00508750 /* MyRobot.h */,
 				EB0C0E04172D2DF000AEC9F2 /* point.cpp */,
 				EB0C0E05172D2DF000AEC9F2 /* point.h */,
+				EBE85663174BCD340061EA7A /* skyBox.cpp */,
+				EBE85664174BCD340061EA7A /* skyBox.h */,
 			);
 			path = CGFExample;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				EBA8BE59171DA90C00995B4E /* TPinterface.cpp in Sources */,
 				EBC3CA2517243CED00508750 /* MyRobot.cpp in Sources */,
 				EB0C0E06172D2DF000AEC9F2 /* point.cpp in Sources */,
+				EBE85665174BCD340061EA7A /* skyBox.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

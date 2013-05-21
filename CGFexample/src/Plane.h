@@ -23,6 +23,8 @@ public:
     void setManyTexels(bool);
     void setWindow(bool);
     void drawWindowBorders(double bx, double bz, double tx, double tz);
+    
+    double texel;
 private:
 	double _rows;
     double _columns;

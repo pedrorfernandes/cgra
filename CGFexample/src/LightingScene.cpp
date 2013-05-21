@@ -186,13 +186,14 @@ void LightingScene::init()
     
     setUpdatePeriod(UPDATE_INTERVAL);
     
-    myBot = new MyRobot(3);
+    myBot = new MyRobot(12);
     
     clockStop = 0;
     
     landscape = new Plane();
     landscapeAppearance = new CGFappearance("landscape.png", GL_REPEAT, GL_REPEAT);
 
+    sky = new SkyBox();
 }
 
 void LightingScene::update(unsigned long miliseconds){
@@ -232,6 +233,13 @@ void LightingScene::display()
 	// ---- END Background, camera and axis setup
 
 	// ---- BEGIN Primitive drawing section
+    
+    glPushMatrix();
+    glTranslated(7.5, 0.0, 7.5);
+    glScaled(300.0, 300.0, 300.0);
+    //glTranslated(0, , 0.0);
+    sky->draw();
+    glPopMatrix();
     
     myPaperPlane->draw();
     
@@ -296,7 +304,7 @@ void LightingScene::display()
 		window->draw();
 	glPopMatrix();
     
-    
+    /*
     // Landscape to see from window
 	glPushMatrix();
         glTranslated(-50,4,7.5);
@@ -306,6 +314,7 @@ void LightingScene::display()
         landscapeAppearance->apply();
         landscape->draw();
 	glPopMatrix();
+     */
 
 	// Board A
 	glPushMatrix();

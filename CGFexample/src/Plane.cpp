@@ -100,15 +100,16 @@ void Plane::drawWithManyTexels()
         for (double bz = 0; bz < _columns; bz++)
         {
             glTexCoord2d( (tx+1) , (tz ) * _ratio);
+
             glVertex3f(bx + 1, 0, bz);
             
             if (_isWindow && (bx == 1 && bz == 1) ){
                 // skip the middle of the wall
                 glEnd();
-                drawWindowBorders(bx, bz, tx, tz);
+                //drawWindowBorders(bx, bz, tx, tz);
                 glBegin(GL_TRIANGLE_STRIP);
             }
-            
+        
             glTexCoord2d( tx , (tz+1) * _ratio);
             glVertex3f(bx, 0, bz + 1);
             tz++;
