@@ -190,8 +190,8 @@ void LightingScene::init()
     
     clockStop = 0;
     
-    landscape = new Plane();
-    landscapeAppearance = new CGFappearance("landscape.png", GL_REPEAT, GL_REPEAT);
+    //landscape = new Plane();
+    //landscapeAppearance = new CGFappearance("landscape.png", GL_REPEAT, GL_REPEAT);
 
     sky = new SkyBox();
 }

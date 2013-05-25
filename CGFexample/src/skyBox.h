@@ -3,6 +3,7 @@
 
 #include "CGFobject.h"
 #include "CGFappearance.h"
+#define HALF_SIZE 0.5f
 
 class SkyBox: public CGFobject {
 private:

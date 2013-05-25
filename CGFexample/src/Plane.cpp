@@ -80,6 +80,11 @@ void Plane::setWindow(bool isWindow){
     _isWindow = isWindow;
 }
 
+bool Plane::equals(double a, double b)
+{
+    return fabs(a - b) < EPSILON;
+}
+
 void Plane::drawWithManyTexels()
 {    
 	glPushMatrix();
@@ -95,33 +100,68 @@ void Plane::drawWithManyTexels()
     {
         glBegin(GL_TRIANGLE_STRIP);
         tx++; tz = -1;
+        if (_isWindow) adjustWindow(tx, tz);
+        
         glTexCoord2d(tx , tz);
         glVertex3f(bx, 0, 0);
         for (double bz = 0; bz < _columns; bz++)
         {
-            glTexCoord2d( (tx+1) , (tz ) * _ratio);
-
+            tx += 1; if (_isWindow) adjustWindow(tx, tz);
+            glTexCoord2d( (tx) , (tz ) * _ratio);
             glVertex3f(bx + 1, 0, bz);
+            tx -= 1; if (_isWindow) adjustWindow(tx, tz);
             
             if (_isWindow && (bx == 1 && bz == 1) ){
                 // skip the middle of the wall
                 glEnd();
-                //drawWindowBorders(bx, bz, tx, tz);
                 glBegin(GL_TRIANGLE_STRIP);
             }
-        
-            glTexCoord2d( tx , (tz+1) * _ratio);
+            
+            tz += 1; if (_isWindow) adjustWindow(tx, tz);
+            glTexCoord2d( tx , (tz) * _ratio);
             glVertex3f(bx, 0, bz + 1);
+            tz -= 1; if (_isWindow) adjustWindow(tx, tz);
+            
             tz++;
         }
-        glTexCoord2d( (tx+1) , _columns-1 * _ratio);
+        
+        tx += 1; if (_isWindow) adjustWindow(tx, tz);
+        glTexCoord2d( (tx) , _columns-1 * _ratio);
         glVertex3d(bx+ 1, 0, _columns);
+        tx -= 1; if (_isWindow) adjustWindow(tx, tz);
         
         glEnd();
     }
     
 	glPopMatrix();
     
+}
+
+inline void Plane::adjustWindow(double &tx, double &tz){
+    if ( equals(tx, -1.0+BORDER_X) ){
+        tx -= BORDER_X;
+    }
+    if ( equals(tx, 0.0) ){
+        tx += BORDER_X;
+    }
+    if ( equals(tx, 1.0+BORDER_X) ){
+        tx -= 2*BORDER_X;
+    }
+    if ( equals(tx, 0.0-BORDER_X) ){
+        tx += 2*BORDER_X;
+    }
+    
+    
+    if ( equals(tz, 0.0) ){
+        tz += BORDER_Z;
+    }
+    if ( equals(tz, 1.0+BORDER_Z) ){
+        tz -= BORDER_Z;
+        tz -= BORDER_TOP;
+    }
+    if ( equals(tz, 2.0-BORDER_TOP) ){
+        tz += BORDER_TOP;
+    }
 }
 
 void Plane::drawWindowBorders(double bx, double bz, double tx, double tz){
