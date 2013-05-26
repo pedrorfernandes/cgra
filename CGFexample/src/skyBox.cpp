@@ -1,5 +1,9 @@
 #include "skyBox.h"
 
+#ifndef __APPLE__
+#include "GL/glext.h"
+#endif
+
 SkyBox::SkyBox(){
     skyFront = new CGFappearance("front.jpg", GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
     skyBack = new CGFappearance("back.jpg", GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
