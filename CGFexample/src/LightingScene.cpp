@@ -179,7 +179,7 @@ void LightingScene::init()
     vector<float> xCoordsPlane, yCoordsPlane, zCoordsPlane;
     xCoordsPlane.push_back(14); yCoordsPlane.push_back(4.2); zCoordsPlane.push_back(8);
     xCoordsPlane.push_back(11); yCoordsPlane.push_back(4); zCoordsPlane.push_back(8);
-    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(5.25); zCoordsPlane.push_back(8);
+    xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(6); zCoordsPlane.push_back(8);
     xCoordsPlane.push_back(0.5); yCoordsPlane.push_back(0.1); zCoordsPlane.push_back(8);
     
     myPaperPlane = new MyPaperPlane(xCoordsPlane, yCoordsPlane, zCoordsPlane);
@@ -235,10 +235,9 @@ void LightingScene::display()
 	// ---- BEGIN Primitive drawing section
     
     glPushMatrix();
-    glTranslated(7.5, 0.0, 7.5);
-    glScaled(300.0, 300.0, 300.0);
-    //glTranslated(0, , 0.0);
-    sky->draw();
+        glTranslated(7.5, 0.0, 7.5);
+        glScaled(300.0, 300.0, 300.0);
+        sky->draw();
     glPopMatrix();
     
     myPaperPlane->draw();

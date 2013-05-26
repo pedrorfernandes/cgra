@@ -15,6 +15,7 @@
 #define STOP 4
 
 #define SPEED 5.0
+#define UP_SPEED 0.8
 
 class MyPaperPlane : public CGFobject {
     CGFappearance * paperPlaneAppearance;

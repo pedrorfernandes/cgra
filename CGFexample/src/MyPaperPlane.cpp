@@ -63,7 +63,7 @@ void MyPaperPlane::update(long miliseconds){
             break;
         case FLYING:
             x -= distanceInterval*SPEED;
-            y += distanceInterval/2.0;
+            y += distanceInterval*UP_SPEED;
             if (x <= xPoints.at(2) || y >= yPoints.at(2)){
                 state = FALLING;
             }
