@@ -346,7 +346,7 @@ void LightingScene::display()
 
 	//First Table
 	glPushMatrix();
-		glTranslated(15,0,2);
+		glTranslated(12,0,4);
 		table->draw();
 	glPopMatrix();
 
@@ -356,13 +356,13 @@ void LightingScene::display()
 		glTranslated(12,0,8);
 		table->draw();
 	glPopMatrix();
-
+     */
 	//Dat Chair
 	glPushMatrix();
-		glTranslated(12, 0, 4);
+		glTranslated(12, 0, 3);
 		chair->draw();
 	glPopMatrix();
-     */
+
 	
 	// ---- END Primitive drawing section
 	

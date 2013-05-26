@@ -80,7 +80,7 @@ void Plane::setWindow(bool isWindow){
     _isWindow = isWindow;
 }
 
-bool Plane::equals(double a, double b)
+inline bool Plane::equals(double a, double b)
 {
     return fabs(a - b) < EPSILON;
 }

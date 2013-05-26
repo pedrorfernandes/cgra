@@ -30,7 +30,7 @@ public:
     void initializeVertices();
     inline void adjustWindow(double &tx, double &tz);
     
-    static bool equals(double a, double b);
+    inline static bool equals(double a, double b);
     
 private:
 	double _rows;

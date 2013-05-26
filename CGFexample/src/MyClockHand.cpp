@@ -89,6 +89,15 @@ void MyClockHand::draw() {
     glRotatef(180.0-angle, 0.0, 0.0, -1);
     glScaled(0.05, 0.4, 0.1);
     glTranslated(0, 0.6, 0);
+    switch (type) {
+        case HOURS:
+            glTranslated(0, 0, 0.2);
+            break;
+        case MINUTES:
+            glTranslated(0, 0, 0.1);
+        default:
+            break;
+    }
     clockHandAppearance->apply();
     cube.draw();
     glPopMatrix();
